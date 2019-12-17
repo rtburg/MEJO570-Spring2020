@@ -1,0 +1,20 @@
+---
+title: "HW2: Getting in a Data State of Mind"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Part 1
+1. Go to https://www2.ncdps.gov/Index2.cfm?a=000003%2C000014%2C002745 and look at the five most recent collision reports from Orange County.
+2. Create a spreadsheet where each row is a collision. Convert the fields in the paper document into columns in the spreadsheet. In Row 1, create column names. In rows 2-6, fill in the information from the forms.
+3. Use your existing knowledge of Excel to analyze the spreadsheet you created, and write one simple sentence that describes a newsworthy finding from your analysis. Write this sentence in Cell A1 of a new tab in the Excel file.
+4. Upload the Excel file to Sakai. Name is “collisions-[your last name]”
+
+## Part 2
+1. Go to https://dod.defense.gov/News/Releases/Customrelcat/12003/ and look at the five most recent Casualty Releases.
+2. Create a spreadsheet where each row is one person. Design the spreadsheet so that a web developer could use it to create the data visualizations on this page: https://apps.washingtonpost.com/national/fallen/
+3. In Row 1, create column names. In rows 2-6, fill in the information pulled from the five most recent news releases.
+4. Upload the Excel file to Sakai. Name it “casualties-[your last name]
