@@ -1,0 +1,57 @@
+---
+title: "HW1: Setting up your computer"
+
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### What to submit?
+At the end of this assignment, I need you to take these screenshots of your computer and upload them to the HW1 assignment on Sakai:
+
+* Your Applications (on Mac) or Program Files (on Windows) directory showing Firefox, R, RStudio, OpenRefine and Tabula.
+* Your Downloads directory showing the polling_place_20191105.csv file, the 2019_11_05/results_pct_20191105.zip file and the 2019_11_05/results_pct_20191105 directory you get when you unzip the file.
+
+### Download and install Firefox web browser
+
+Yes, I know you already have a web browser on your computer. If you're anything like the rest of America, there's a 65% chance the primary web browser you use is Chrome. If you have a Mac, you have Safari and you may use that, too. But the browser I support for this class is called Firefox. I like it because it is free and open sourced software developed by the non-profit [Mozilla](https://www.mozilla.org/en-US/) organization that does a lot of good work to [protect privacy](https://www.mozilla.org/en-US/firefox/privacy/), keep the web open and [support journalists](https://opennews.org/who/history/).
+
+Feel free to use any browser you like. But just know that they all behave a little differently and Firefox is the only one I can help you troubleshoot.
+
+* **Step 1:** [Download and install Firefox](https://opennews.org/who/history/)
+* **Step 2:** [Change your Firefox settings](https://support.mozilla.org/en-US/kb/where-find-and-manage-downloaded-files-firefox#w_change-where-downloads-are-saved) so that it prompts you for the location to save a file each time you download one. (We will be downloading a lot of files this semester, and we want to keep your laptop tidy.)
+
+* **Step 3:** Set the default behavior for what happens when you click on a .csv or a .zip file in Firefox
+
+  * [Click on](https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2019_11_05/polling_place_20191105.csv) the N.C. State Board of Elections' list of polling places used in the 2019 municipal elections. Follow [these instructions](https://support.mozilla.org/en-US/kb/change-firefox-behavior-when-open-file#w_adding-download-actions) to make Firefox ask you where you want to save .csv files any time you click on one of them.
+
+  * [Click on](https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2019_11_05/results_pct_20191105.zip) the N.C. State Board of Elections' collection of precinct-by-precinct election results in the 2019 municipal elections. Follow [these instructions](https://support.mozilla.org/en-US/kb/change-firefox-behavior-when-open-file#w_adding-download-actions) to make Firefox ask you where you want to save .zip files any time you click on one of them.
+
+* **Step 4:** Extract the .zip file archive you downloaded in Step 2.
+  *[Instruction for extracting .zip archives on Mac OS X](http://osxdaily.com/2017/11/05/how-open-zip-file-mac/)
+  * [Instructions for extracting .zip archives on Windows](https://support.microsoft.com/en-us/help/4028088/windows-zip-and-unzip-files)
+
+### Setting up your computer 
+
+* **Step 1:** At some point in the semester you will likely find yourself wishing that certain types of files on your computer opened in the application you want them to use. For example, maybe you're a Mac users and want your .csv files to open in Excel and not Numbers. Here's how you change those settings [on Mac OS X](http://osxdaily.com/2013/08/08/change-default-application-open-files-mac-os-x/) and [on Windows](https://support.microsoft.com/en-us/help/4028161/windows-10-change-default-programs)
+
+* **Step 2:** 
+Create a new folder (also called a directory) inside your Documents folder. Call it "MEJO570".
+
+### Downloading R and RStudio
+* **Step 1:** [Download and install R](http://archive.linux.duke.edu/cran/). R is a computer language used for data analysis. You can [read more about it](https://learn.r-journalism.com/en/introduction/what_is_r/what-is-r/).
+* **Step 2:** [Download and install RStudio](https://rstudio.com/products/rstudio/download/#download). RStudio is a software application that makes it easier to do cool things with R. Technically, this type of sotware application is called an IDE -- interactive development environment.
+
+### Download OpenRefine
+* **Step 1:** [Go to the OpenRefine download page.](https://github.com/OpenRefine/OpenRefine/releases)
+* **Step 2:** Under whatever is the most recent version at the top of the page you will see a little link called "Assets." Click on that, and then click on the appropriate version of the software for your operating system.
+* **Step 3:** After the file is downloaded, follow the instructions either for [Mac](https://github.com/OpenRefine/OpenRefine/wiki/Installation-Instructions#macos) or [Windows](https://github.com/OpenRefine/OpenRefine/wiki/Installation-Instructions#windows). If you get stuck at any point, [this page](https://github.com/OpenRefine/OpenRefine/wiki/Installation-Instructions) may help. If you see something that makes you say "Man, I have no idea what they're talking about" then stop in your tracks and make an appointment to see me for help.
+
+### Download and install Tabula
+* This one is [pretty simple](https://tabula.technology/).
+
+### Git and GitHub
+* Before the end of class we will need to get each of you set up on Github so you can publish your finished work. We will do that together in class, but if you're anxious you can [sign up for a GitHub account](https://help.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account) [get started here](https://learn.r-journalism.com/en/git/)
+
