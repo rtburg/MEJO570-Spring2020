@@ -1,13 +1,132 @@
 ---
-title: "Syllabus"
+title: "Syllabus: JOMC570 Data Driven Journalism - Spring 2020"
 author: "Ryan Thornburg"
-date: ""`r format(Sys.time(), '%B %d, %Y')`"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+
+MW – 9:30-10:45 a.m.
+
+Instructor: Ryan Thornburg
+
+Office Hours: 8 a.m. - 4 p.m. Tues/Thurs
+
+Office Location: CA 215
+
+Office Phone: 919-537-3681
+Course Site: [https://rtburg.github.io/MEJO570-Spring2020/](https://rtburg.github.io/MEJO570-Spring2020/)
+
+### PRE-REQUISITES:
+Experience reporting news in a professional or classroom setting, including clear news judgment and ability to communicate with clarity and brevity.**
+
+### COURSE DESCRIPTION:
+In this skills-based course students learn how to acquire, clean, analyze and present data in a journalistic setting. 
+
+Your decision to take this course indicates that you are interested in learning the skills and concepts of data-driven reporting. The class starts from the assumption that you’ve never or rarely used even a basic spreadsheet to aid either your reporting or storytelling. That’s where the semester will begin. Along the road to data literacy we will also go over some basic statistics and basic data visualization concepts.
+
+### OBJECTIVES:
+Students who successfully complete this course will be able to acquire, organize, analyze and present data to a general news audience. Students will learn how to use the tools of data-driven journalism as a means to developing and testing hypotheses that lead to transparent and reproducible data-driven stories. 
+
+Through the study of quantitative reasoning and methods, students in this course will acquire and reinforce the ability to use analytic and quantitative ideas as they are applied in the context of professional journalistic reporting. In today’s world of fast-paced advances in the use of data, the importance of such skills cannot be overstated.
+
+This course focuses especially on the ways that quantitative reasoning can be applied to the kinds of data that professional news reporters use in a variety of media presentation formats. 
+
+Students in this course will learn how to collect and interpret quantitative data, apply mathematical analysis in a news reporting context and use numerical reasoning to organize and present a story to general news audiences. 
+
+### ATTENDANCE POLICY:
+As part of their grade, students will submit after each class session one question they wished they had asked about the material covered in class. These submissions will be used to track attendance and will be part of the “daily work” grade, along with homework exercises and reading summaries described later. Students who do not attend a class session will not be allowed to submit a question about the session they missed.
+
+### LATE ASSIGNMENTS:
+In general, I need you to turn in your assignments on time so I can give you feedback in time for it to be useful to you. 
+
+For homework assignments, even 1 second after deadline is -1 point. After 24 hours, the deduction becomes 2 points. The grade for a homework assignment that is 48-72 hours late will be reduced by 3 points. I will not accept homework assignments more than three days late unless we have made arrangements before deadline.
+
+For major assignments, student can miss deadlines on major assignments by a cumulative 48 hours without penalty. That means one assignment can be 48 hours late, or 4 assignments can each be 12 hours late, etc. Once the 48-hour grace period is expended, the student' will immediately begin losing 10% of the possible points for each fraction of a day the assignment is late's grade on late assignments will immediate drop a full letter grade each calendar day it is late (eg. An A assignment due at noon on Thursday becomes a B at 12:01 p.m., a C at noon on Friday, a D at noon on Saturday, and an automatic F after noon on Sunday.)
+
+
+### COURSE MATERIALS:
+Your laptop is the tool of your craft, and its care and maintenance reflect upon you and your readiness to work in the professional settings for which this course prepares you. Just like a guitar player wouldn’t show up to rehearsal with a broken string, you also need to ensure your computer is in good working order each and every class. Laptops – like guitar strings – will break. Having a backup plan demonstrates maturity and professional preparedness. 
+
+By the second day of class you will [need to have installed on your laptop several free software applications](assignments/HW1.html) we will be using throughout the semester.
+
+All of the reading material you need for class is either free online, free via the generosity of UNC Libraries, or free via electronic reserves at UNC Libraries.
+
+I strongly encourage you to purchase a $25 IRE student membership (https://www.ire.org/membersonly/join/register) . This will give you access to dozens of tip sheets and resources that will be useful to you in class and as part of your broader professional development.
+
+### DETERMINATION OF GRADE:
+Throughout the semester, students will earn points for completing various assignments. Most of the assignments will be given letter grades that correspond to the [numerical values found on the UNC Registrar's site](https://registrar.unc.edu/academic-services/grades/explanation-of-grading-system/). When determining final grades for the course, I will trim the values to the tenths place. (For example, a 3.7 will be an A-, but a 3.70001 will be an A.)
+
+
+|Assignment|Percentage of your grade|
+|----------|------------------------|
+|Attendance questions|10%|
+|Homework and quizzes|40%|
+|Data negotiation|10%|
+|Final|40%|
+
+
+If you are a MEJO major using this to satisfy a MEJO course requirement, you must receive at least a C- in the course in order to have the credits count toward your major requirements. 
+
+If you are a MEJO minor, you must receive at least a C in the course in order to have the credits count toward your minor.
+
+
+Please see “Undergraduate Grade Definitions” and “Graduate Grade Definitions” at https://registrar.unc.edu/academic-services/grades/explanation-of-grading-system/  for a better understanding of what letter grades mean at UNC-Chapel Hill.
+
+
+### STUDENT HONOR: 
+The University of North Carolina at Chapel Hill has had a student-led honor system for over 100 years. Academic integrity is at the heart of Carolina and we all are responsible for upholding the ideals of honor and integrity. The student-led Honor System is responsible for adjudicating any suspected violations of the Honor Code and all suspected instances of academic dishonesty will be reported to the honor system. 
+
+All academic work in this course, including homework, quizzes, and exams, is to be your own work, unless otherwise specifically provided. It is your responsibility if you have any doubt to confirm whether or not collaboration is permitted. If the work is truly your own, you will be able to explain and demonstrate to my satisfaction how you did it. 
+
+Do not represent someone else’s words, thoughts, or ideas as your own without attribution in connection with submission of academic work, whether graded or otherwise. 
+
+If you have any questions about your responsibility or your instructor’s responsibility as a faculty member under the Honor Code, please see the course instructor or Senior Associate Dean C. A. Tuggle, or you may speak with a representative of the Student Attorney Office or the Office of the Dean of Students.
+
+Further information about the student Honor Code is available at http://honor.unc.edu
+
+### SEEKING HELP:
+If you need individual assistance, it’s your responsibility to meet with the instructor. If you are serious about wanting to improve your performance in the course, the time to seek help is as soon as you are aware of the problem – whether the problem is difficulty with course material, a disability, or an illness.
+
+Before you meet with me to help you with code, you need the following so I can best help you:
+* A description of the problem ([using Stack Overflow's guide](https://stackoverflow.com/help/how-to-ask))
+* A description of what you've done to solve the problem yourself
+  * What did you do to try to isolate the error?
+  * What search phrase did you use and why did that not work?
+  * Did you have a peer help you try to diagnose?
+* A copy of the code and data you are using.
+* An appointment to meet in office hours
+
+I will *always* help you. But I need to see that you're working just as hard as I am to find the solution. Also, I expect you to make mistakes. We all make mistakes. You will see me make these kinds of mistakes in class. But there are three kinds of mistakes that if I find during a troubleshooting session with you will cost you a point on your next homework assignment. They are:
+* Spelling errors
+* Capitalization errors
+* Missing (or too many) enclosure marks (like quote marks, parentheses, etc.)
+* Spacing or line break errors
+
+Why so mean to take off a point for these kinds of errors? Because they are errors of care and attention, not understanding. And because they are easy to eliminate as possible sources of error.
+
+### DIVERSITY:
+The University’s policy on Prohibiting Harassment and Discrimination is outlined in the 2011-2012 Undergraduate Bulletin http://www.unc.edu/ugradbulletin/. UNC is committed to providing an inclusive and welcoming environment for all members of our community and does not discriminate in offering access to its educational programs and activities on the basis of age, gender, race, color, national origin, religion, creed, disability, veteran’s status, sexual orientation, gender identity, or gender expression.
+ 
+### ACCOMODATIONS:
+If you require special accommodations to attend or participate in this course, please let the instructor know as soon as possible. If you need information about disabilities visit the Department of Disability Services website at http://disabilityservices.unc.edu/ 
+
+
+### ACCREDITATION:
+The School’s accrediting body outlines a number of values you should be aware of and competencies you should be able to demonstrate by the time you graduate from our program.  Learn more about them here:
+http://www2.ku.edu/~acejmc/PROGRAM/PRINCIPLES.SHTML#vals&comps
+ 
+No single course could possibly give you all of these values and competencies; but collectively, our classes are designed to build your abilities in each of these areas.  In this class, we will address a number of the values and competencies, with special emphasis on the last six bullet dots under "Professional values and competencies" in the link above.
+
+
+
+
+## COURSE CALENDAR
+
 ## Week 1
 ### Class 1: Jan. 9
 
@@ -27,8 +146,8 @@ knitr::opts_chunk$set(echo = TRUE)
 * Read: [Why is data journalism important?](https://datajournalism.com/read/handbook/one/introduction/why-is-data-journalism-important)
 * Read: [Data journalism in perspective](https://datajournalism.com/read/handbook/one/introduction/data-journalism-in-perspective)
 * Read: [How the Sun Sentinel reported its Pulitzer Prize winning coverage of off-duty cops](https://www.ire.org/archives/29647)
-* Do: Complete computer set-up assignment
-- Firefox, R, RStudio, OpenRefine, Tabula, CometDocs, Google sheets
+* Do: Complete [computer set-up assignment](assignments/HW1.html)
+
 
 ## Week2
 ### Class 2: Jan. 13
@@ -36,28 +155,26 @@ knitr::opts_chunk$set(echo = TRUE)
 
 * Quiz on introductory readings
 * Getting into a data state of mind with spreadsheets
-2.	Basic Spreadsheets: rows, columns, cells, importing, sorting, filtering
+* Basic Spreadsheets: rows, columns, cells, importing, sorting, filtering
 
 **Homework:**
 
-* Do: Data state of mind assignment (Spreadsheet of DoD Casualties, Spreadsheet of crash reports)
-* Read: Date Literacy, Chapter 2
-* Read: Data Literacy, Chapter 3
+* Do: [Data state of mind assignment](assignments/HW2.html)
+* Read: Date Literacy, [Chapter 2](https://dx-doi-org.libproxy.lib.unc.edu/10.4135/9781483399966.n6)
+* Read: Data Literacy, [Chapter 3](https://dx-doi-org.libproxy.lib.unc.edu/10.4135/9781483399966.n7)
 * Do: Create chapter summaries/study guide from readings.
-https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f78f8-3972-4b74-b1a6-7acaa0f90255?panel=Main
-
 
 
 ### Class 3: Jan. 15
 **In Class:**
 
 * Public records lecture
-* Introducing public records negotiations diary assignment
+* Introducing [public records negotiations diary assignment](assignments/records-negotiations.html)
 
 **Homework:**
 
-* Read: Data Literacy, Chapter 4
-* Read: Art of Access, Chapter 7
+* Read: Data Literacy, [Chapter 4](http://methods.sagepub.com.libproxy.lib.unc.edu/book/data-literacy/i615.xml)
+* Read: Art of Access, Chapter 7 ([available via UNC Libraries digital reserves(https://ares.lib.unc.edu/ares.dll?SessionID=I235223169R&Action=10&Type=10&Value=109103558))
 * Do: Create chapter summaries/study guide from readings.
 
 ## Week 3
@@ -66,16 +183,11 @@ https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f
 ### Class 4: Jan. 22
 **In class:**
 
-* Discuss Final Assignment: Pitch, Analysis, Draft, Final
-* Doing a clips search
-* Finding experts
 * Intro to data analysis with spreadsheets: What's normal and not normal?
-
+* Excel functions: mean, median, max, min, rank
 **Homework**
 
-* Do: Excel Assignment 1
-https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f78f8-3972-4b74-b1a6-7acaa0f90255?panel=Main
-3.	Basic Spreadsheets II - mean, median, min, max, ranking
+* Do: [Excel Assignment 1](assignments/HW3.html)
 
 ## Week 4
 ## # Class 5: Jan. 27
@@ -90,12 +202,12 @@ https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f
 
 **Homework:**
 
-* Read: R for Journalists, "How to use R" https://learn.r-journalism.com/en/how_to_use_r/
-* Read: R for Data Science, Chapter 2
+* Read: R for Journalists, ["How to use R"](https://learn.r-journalism.com/en/how_to_use_r/) 
+* Read: R for Data Science, Chapter 2 **<-- send to HTML version**
 * Read: R for Data Science, Chapter 6
 * Read: R for Data Science, Chapter 21
 * Read: R for Data Science, Chapter 24
-* Do: R Assignment 1. Workspace set-up and first R notebook
+* Do: [R Assignment 1. Workspace set-up and first R notebook](assignments/HW4.) **<--markdown or HTML?**
 
 ### Class 6: Jan. 29
 **In Class**
@@ -103,11 +215,11 @@ https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f
 * Loading Data into R
 * First steps with data analysis in R
 
-
-
 **Homework**
 
-* Do: R Assignment 2. Half of MLB salaries in R. You need to help them with import, NA values and column data types. sum(), colSums(), summary().
+* Do: [R Assignment 2](assignments/HW5.) **<--markdown or HTML?**
+
+**Half of MLB salaries in R. You need to help them with import, NA values and column data types. sum(), colSums(), summary().**
 
 ## Week 5
 ### Class 7: Feb. 3
@@ -117,7 +229,7 @@ https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f
 
 **Homework**
 
-* Do: Excel Assignment 2: Pivot Tables with MLB Salaries
+* Do: [Excel Assignment 2](https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f78f8-3972-4b74-b1a6-7acaa0f90255?panel=Main)
 
 
 ### Class 8: Feb. 5
@@ -129,7 +241,7 @@ https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f
 
 **Homework**
 
-* Read: https://learn.r-journalism.com/en/wrangling/dplyr/dplyr/
+* Read: R for Journalists, ["Transforming and Analyzing Data"](https://learn.r-journalism.com/en/wrangling/dplyr/dplyr/)
 * Read: R for Data Science, Chapter 3. 
 
 ## Week 6
@@ -148,7 +260,7 @@ https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f
 
 **Homework:**
 
-* R Assignment 3: Applying lessons from MLB to UNC Salaries
+* Do: [Analyzing UNC Salaries in R](assignments/HW5.)
 
 ## Week 7
 ### Class 11: Feb. 17
@@ -164,8 +276,8 @@ https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f
 **Homework:**
 
 * Read: R for Data Science, Chapter 8
-* Read: R for Journalism, Chapter 2 https://learn.r-journalism.com/en/importing_exporting/
-* Do: Importing/Exporting Assignment (with campaign finance and other data??)
+* Read: R for Journalists, [Chapter 2](https://learn.r-journalism.com/en/importing_exporting/) 
+* Do: [Importing/Exporting Assignment](assignments/HW6.) (with campaign finance and other data??)
 
 ### Class 12: Feb. 19
 **In Class:**
@@ -175,7 +287,7 @@ https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f
 **Homework**
 
 *Read: R for Data Science, Chapter 1
-*Read: Numbers in the Newsroom, Chapter 2
+*Read: Numbers in the Newsroom, Chapter 2 **NEED COPY**
 
 ## Week 8
 ### Class 13: Feb. 24
@@ -195,7 +307,7 @@ https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f
 
 **Homework:**
 
-* Read: https://learn.r-journalism.com/en/wrangling/strings/strings/
+* Read: R for Journalists, ["Handling Strings"]( https://learn.r-journalism.com/en/wrangling/strings/strings/)
 * Read: R for Data Science, Chapter 11
 
 
@@ -207,20 +319,19 @@ https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f
 
 **Homework:**
 
-* Read: https://learn.r-journalism.com/en/wrangling/dates/dates/
+* Read: R for Journalists, ["Dealing with Dates"](https://learn.r-journalism.com/en/wrangling/dates/dates/)
 * Read: R for Data Science, Chapter 13
 
 ### Class 16: March 4
 **In Class:**
 
-* Pitch for Final Story due
 * Data shaping. Gather(), spread(), separate(), unite() 
 * case_when() and cast()
 
 **Homework:**
 
 * Read: R for Data Science, Chapter 9
-* Read: https://learn.r-journalism.com/en/wrangling/tidyr_joins/tidyr-joins/
+* Read: R for Journalists, [Tidying and joining data](https://learn.r-journalism.com/en/wrangling/tidyr_joins/tidyr-joins/)
 
 
 ## Week 10
@@ -229,11 +340,12 @@ https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f
 ## Week 11
 ### Class 17: March 16
 **In Class**
-
+* Due: ["How I got the story?" extra credit] assignment(https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f78f8-3972-4b74-b1a6-7acaa0f90255?panel=Main)
 * Introduction to Joins. Unique(), merge(), inner_join(), left_join(), right_join(), full_join(), semi_join(), anti_join(), 
 
 **Homework:**
 
+* (Re-)Read: R for Journalists, [Tidying and joining data](https://learn.r-journalism.com/en/wrangling/tidyr_joins/tidyr-joins/)
 * Read: R for Data Science, Chapter 10
 
 
@@ -262,7 +374,6 @@ https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f
 * Read, Numbers in the Newsroom, Chapter 1
 * Read, Numbers in the Newsroom, Chapter 6
 * Do: Find a story in a local news source and describe how they could do better with numbers.
-* Download and install Tabula
 
 ## Week 13
 ### Class: 21: March 30
@@ -281,7 +392,7 @@ https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f
 
 **Homework:**
 
-* Scrape IRE jobs board using ImportXML
+* Do:[Scrape IRE jobs board using ImportXML](https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f78f8-3972-4b74-b1a6-7acaa0f90255?panel=Main)
 
 
 ## Week 14
@@ -302,7 +413,7 @@ https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f
 **Homework:**
 
 * Read: Numbers in the Newsroom, Chapter 3
-* Read: https://learn.r-journalism.com/en/visualizing/
+* Read: R for Journalists, [Chapter 4](https://learn.r-journalism.com/en/visualizing/)
 * Read: R for Data Science, Chapter 22
 
 **Extra Credit Reading:**
@@ -320,7 +431,7 @@ https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f
 
 **Homework**
 
-* https://learn.r-journalism.com/en/mapping/ (?)
+* Read: R for Data Journalists, [Chapter 5](https://learn.r-journalism.com/en/mapping/)
 
 
 
@@ -335,7 +446,7 @@ https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f
 **In Class:** 
 
 * Final Story Drafts due at start of class.
-* Posting your work to github
+* [Posting your work to github](https://happygitwithr.com/index.html)
 
 ## Final Dates
 ### Section 2: Tuesday, April 28, 12 p.m.
@@ -353,16 +464,6 @@ https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f
 
 
 
-**In class:**
-
-* Public Records: Your rights as a citizen and a journalist.  
-* The public records request assignment.
-* More examples of data stories; how to start looking for them.
-
-[**Lecture slides**](https://github.com/mattwaite/JOUR307-Data-Journalism/blob/master/Lectures/pdf_output/2_public_records.pdf)
-
-**Homework:**
-
-* Read: Herzog chapters 2, 3 and 4.
-* Read: [Sun Sentinel: Speeding Cops](http://www.sun-sentinel.com/news/local/speeding-cops/)
-* Review [the records retention schedule](http://www.sos.ne.gov/records-management/retention_schedules.html) for an agency you're interested in. Find a database. Make sure it's not online. Be ready to pitch it as your semester long quest next class.
+* Discuss Final Assignment: Analysis, Draft, Final
+* Doing a clips search
+* Finding experts
