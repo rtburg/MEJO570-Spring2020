@@ -1,0 +1,54 @@
+---
+title: "HW4: First R Markdown"
+author: "FIRSTNAME LASTNAME"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+time: "`r format(Sys.time(), '%H:%M')`"
+output: html_document
+---
+
+
+##Instructions
+Complete this assignment in RStudio. Run all of the chunks, then Knit the markdown file to html. Upload that HTML file to the HW4 assignment on Sakai.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### 1.Calculate how many years it has been since UNC opened its doors in 1793.
+```{r}
+
+```
+
+### 2. Create a variable called `coach` that stores the name of the UNC women's basketball coach.
+```{r}
+
+# write your code above here
+coach
+```
+
+### 3. Create a variable called `students` that stores the number of students in MEJO 570.
+```{r}
+
+# write your code above here
+students
+```
+
+### 4. Create a variable called `instructors` that stores the names of the people teaching your classes this semester.
+
+```{r}
+
+# write your code above here
+instructors
+```
+
+### 5. Create a variable called `attendance` that stores the approximate number of students your classes this semester. (You will need to create your own code chunk here.)
+
+### 6. What is the average number of students in your classes this semester?
+```{r}
+mean(   )
+```
+
+
+### 7. Use markdown to make an unordered list of five things. Name the list using a "header". Make the third and fifth items bold. And link the second item to the UNC.edu homepage. You can use this [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#emphasis) 
+
+
