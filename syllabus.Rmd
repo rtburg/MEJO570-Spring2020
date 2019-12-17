@@ -69,13 +69,24 @@ Throughout the semester, students will earn points for completing various assign
 |Data negotiation|10%|
 |Final|40%|
 
-
 If you are a MEJO major using this to satisfy a MEJO course requirement, you must receive at least a C- in the course in order to have the credits count toward your major requirements. 
 
 If you are a MEJO minor, you must receive at least a C in the course in order to have the credits count toward your minor.
 
 
 Please see “Undergraduate Grade Definitions” and “Graduate Grade Definitions” at https://registrar.unc.edu/academic-services/grades/explanation-of-grading-system/  for a better understanding of what letter grades mean at UNC-Chapel Hill.
+
+#### Extra Credit
+In addition to the required assignments, there will be two opportunities to earn extra credit.
+
+If you produce **a published news story that relies on data you receive as part of your records request**, you may earn extra credit of up to 10% of your final grade. Thie story must be published by the last day of class.
+
+You may also complete the "How I got the story" extra credit assignment for up to 10% of your final grade. This must be done by Spring Break.
+
+Additionally, every typo, broken link or other error you find in the syllabus before the start of the third week of class will earn you one extra credit point on your participation grade. Send all errors to me via email.
+
+
+
 
 
 ### STUDENT HONOR: 
@@ -133,7 +144,7 @@ No single course could possibly give you all of these values and competencies; b
 **In class:**
 
 * Getting into a data state of mind
-..* [Miami police officer arrested for speeding](https://abcnews.go.com/US/video/miami-police-officer-arrested-speeding-14842258)
+  * [Miami police officer arrested for speeding](https://abcnews.go.com/US/video/miami-police-officer-arrested-speeding-14842258)
 * Syllabus
 * Introductions
 
@@ -149,7 +160,7 @@ No single course could possibly give you all of these values and competencies; b
 * Do: Complete [computer set-up assignment](assignments/HW1.html)
 
 
-## Week2
+## Week 2
 ### Class 2: Jan. 13
 **In Class:**
 
@@ -174,7 +185,7 @@ No single course could possibly give you all of these values and competencies; b
 **Homework:**
 
 * Read: Data Literacy, [Chapter 4](http://methods.sagepub.com.libproxy.lib.unc.edu/book/data-literacy/i615.xml)
-* Read: Art of Access, Chapter 7 ([available via UNC Libraries digital reserves(https://ares.lib.unc.edu/ares.dll?SessionID=I235223169R&Action=10&Type=10&Value=109103558))
+* Read: Art of Access, Chapter 7 ([available via UNC Libraries digital reserves](https://ares.lib.unc.edu/ares.dll?SessionID=I235223169R&Action=10&Type=10&Value=109103558) )
 * Do: Create chapter summaries/study guide from readings.
 
 ## Week 3
@@ -185,6 +196,7 @@ No single course could possibly give you all of these values and competencies; b
 
 * Intro to data analysis with spreadsheets: What's normal and not normal?
 * Excel functions: mean, median, max, min, rank
+
 **Homework**
 
 * Do: [Excel Assignment 1](assignments/HW3.html)

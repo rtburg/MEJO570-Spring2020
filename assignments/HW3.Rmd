@@ -1,0 +1,72 @@
+---
+title: "HW3: Intro to Excel"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+While reading MaryJo Webster's [Beginner Excel tutorial](https://mjwebster.github.io/DataJ/BeginnerExcel.html), follow along by completing these tasks and answering these questions.
+
+
+When you are done with the tutorial, upload both a Word document with answers to these questions as well as the spreadsheet file that shows your work.
+
+**Questions for the Word doc**
+
+Please just write the numerical answers.
+
+1. How much did all teams pay their players in 2004?
+
+2. How much more (or less) did the Arizona Diamondbacks pay its players in 2016 than it paid in 2011?
+
+3. What team had the largest percent increase in payroll between 2011 and 2016? What was the rate of increase?
+
+4. What team accounted for the largest percentage of MLB payroll in 2016, and what was the percent?
+
+5. What was the average team payroll in 2016?
+
+6. What did most teams pay their players in 2016?
+
+**Excel Tasks** 
+
+1. Download the Excel spreadsheet file that Webster has linked from her tutorial. Open it and save it as a renamed file.
+
+2. Freeze both Row 1 and Column A so you can scroll around your spreadsheet without losing your headers.
+
+3. In cell B32, use the SUM function to calculate the total amount of payroll for all teams in 2002.
+
+4. Now, drag that formula from B32 all the way to the right so you have the total payroll amounts for each year.
+
+5. In cell A32 give your new row a meaningful name
+
+6. In cell J2, calculate the how much more (or less) the Arizona Diamondbacks paid its players in 2016 than it paid in 2011.
+
+7. Fill column J down so that you have calculations of the difference in payroll for each team (and for all teams in Row 32)
+
+8. In cell J1 give your row a meaningful name.
+
+9. In cell K2, calculate the percent increase in the payroll for the Arizona Diamondbacks between 2011 and 2016.
+
+10. Fill column K down so that you have calculations of the increase in payroll for each team (and for all teams in Row 32)
+
+11. In cell K1 give your row a meaningful name.
+
+12. In cell L2, calculate the Diamondbacks payroll divided by the total payroll for 2016.
+
+13. Fill column L down so that you can see the percent of total payroll of each team (and for all teams in Row 32)
+
+14. In cell L1 give your row a meaningful name.
+
+15. In the cells in row 33, calculate the average payroll for each year, and give the row a meaningful name.
+
+16. In the cells in row 34, calculate the median payroll for each year, and give the row a meaningful name
+
+17. Copy the formulas from Column L and paste them into Column M.
+
+18. Now copy the formulas from Column L again and paste them into Column N as just the values of the formulas, not the formulas themselves.
+
+19. Now hide Column M
+
+20. Sort the rows so that the teams are ranked from largest to smallest by the percent increase in player payroll between 2011 and 2016.
+
+21. EXTRA CREDIT: Filter the rows so that just the teams currently in the American League are showing.
