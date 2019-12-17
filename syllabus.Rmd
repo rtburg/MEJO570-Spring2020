@@ -219,14 +219,10 @@ No single course could possibly give you all of these values and competencies; b
 * Read: R for Data Science, "[Workflow: basics"](https://r4ds.had.co.nz/workflow-basics.html)
   * Note for here and elsewhere: The printed version of "R for Data Science" has different chapter numbering, so the names of the chapters are what you should pay attention to.) 
 * Read: R for Data Science, "[Workflow: projects"](https://r4ds.had.co.nz/workflow-projects.html)
-
-* Read: R for Journalists, ["How to use R"](https://learn.r-journalism.com/en/how_to_use_r/) 
-
-
-
 * Read: R for Data Science, ["R Markdown"](https://r4ds.had.co.nz/r-markdown.html)
 * Read: R for Data Science, [R Markdown Workflow](https://r4ds.had.co.nz/r-markdown-workflow.html)
-* Do: [R Assignment 1. Workspace set-up and first R notebook](assignments/HW4.) **<--markdown or HTML?**
+* Read: R for Journalists, ["How to use R"](https://learn.r-journalism.com/en/how_to_use_r/) 
+* Do: [R Assignment 1. Workspace set-up and first R notebook](assignments/HW4.Rmd) **
 
 ### Class 6: Jan. 29
 **In Class**
