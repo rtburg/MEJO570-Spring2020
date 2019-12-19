@@ -3,4 +3,6 @@
 .RData
 .Ruserdata
 
+data/*
+
 assignments/*-key
