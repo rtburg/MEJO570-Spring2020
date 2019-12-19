@@ -11,7 +11,7 @@
 
 <meta name="author" content="Ryan Thornburg" />
 
-<meta name="date" content="2019-12-17" />
+<meta name="date" content="2019-12-19" />
 
 <title>Syllabus: JOMC570 Data Driven Journalism - Spring 2020</title>
 
@@ -365,7 +365,7 @@ summary {
 
 <h1 class="title toc-ignore">Syllabus: JOMC570 Data Driven Journalism - Spring 2020</h1>
 <h4 class="author">Ryan Thornburg</h4>
-<h4 class="date">December 17, 2019</h4>
+<h4 class="date">December 19, 2019</h4>
 
 </div>
 
@@ -394,6 +394,7 @@ summary {
 <div id="attendance-policy" class="section level3">
 <h3>ATTENDANCE POLICY:</h3>
 <p>As part of their grade, students will submit after each class session one question they wished they had asked about the material covered in class. These submissions will be used to track attendance and will be part of the “daily work” grade, along with homework exercises and reading summaries described later. Students who do not attend a class session will not be allowed to submit a question about the session they missed.</p>
+<p>For each class, I will assign one student to take lecture notes that will be shared with other members of the class via Sakai. For the class sessions where we are working in R (starting with Class 5) students will take the lecture notes in an R notebook file. On the day you take notes you will not be responsible for a question.</p>
 </div>
 <div id="late-assignments" class="section level3">
 <h3>LATE ASSIGNMENTS:</h3>
@@ -416,36 +417,75 @@ summary {
 <tr class="header">
 <th>Assignment</th>
 <th>Percentage of your grade</th>
+<th>Due date</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Attendance questions</td>
 <td>10%</td>
+<td>Each class</td>
 </tr>
 <tr class="even">
 <td>Homework and quizzes</td>
 <td>40%</td>
+<td>As assigned</td>
 </tr>
 <tr class="odd">
 <td>Data negotiation</td>
 <td>10%</td>
+<td>April 15</td>
 </tr>
 <tr class="even">
 <td>Final</td>
 <td>40%</td>
+<td>See below</td>
 </tr>
 </tbody>
 </table>
-<p>If you are a MEJO major using this to satisfy a MEJO course requirement, you must receive at least a C- in the course in order to have the credits count toward your major requirements.</p>
-<p>If you are a MEJO minor, you must receive at least a C in the course in order to have the credits count toward your minor.</p>
-<p>Please see “Undergraduate Grade Definitions” and “Graduate Grade Definitions” at <a href="https://registrar.unc.edu/academic-services/grades/explanation-of-grading-system/" class="uri">https://registrar.unc.edu/academic-services/grades/explanation-of-grading-system/</a> for a better understanding of what letter grades mean at UNC-Chapel Hill.</p>
+<div id="final-project" class="section level4">
+<h4>Final project</h4>
+<p>For the final project you will be learning how to find and report stories in public political campaign finance data by examining reports for candidates who are running for state office in North Carolina this year.</p>
+<p>We will begin work on the final project in Week 7, and it will have portions due throughout the rest of the semester. The final project is due on the final exam date for your section.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Percentage of your course grade</th>
+<th>Due date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Data analysis</td>
+<td>20%</td>
+<td>March 30</td>
+</tr>
+<tr class="even">
+<td>Draft</td>
+<td>15%</td>
+<td>April 22</td>
+</tr>
+<tr class="odd">
+<td>Final</td>
+<td>5%</td>
+<td>Date of final exam</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div id="extra-credit" class="section level4">
 <h4>Extra Credit</h4>
 <p>In addition to the required assignments, there will be two opportunities to earn extra credit.</p>
 <p>If you produce <strong>a published news story that relies on data you receive as part of your records request</strong>, you may earn extra credit of up to 10% of your final grade. Thie story must be published by the last day of class.</p>
-<p>You may also complete the “How I got the story” extra credit assignment for up to 10% of your final grade. This must be done by Spring Break.</p>
+<p>You may also complete the <a href><em>“How I got the story”</em></a> extra credit assignment for up to 10% of your final grade. This must be done by Spring Break.</p>
 <p>Additionally, every typo, broken link or other error you find in the syllabus before the start of the third week of class will earn you one extra credit point on your participation grade. Send all errors to me via email.</p>
+</div>
+<div id="passing-grades" class="section level4">
+<h4>Passing Grades</h4>
+<p>If you are a MEJO major using this to satisfy a MEJO course requirement, you must receive at least a C- in the course in order to have the credits count toward your major requirements.</p>
+<p>If you are a MEJO minor, you must receive at least a C in the course in order to have the credits count toward your minor.</p>
+<p>Please see “Undergraduate Grade Definitions” and “Graduate Grade Definitions” at <a href="https://registrar.unc.edu/academic-services/grades/explanation-of-grading-system/" class="uri">https://registrar.unc.edu/academic-services/grades/explanation-of-grading-system/</a> for a better understanding of what letter grades mean at UNC-Chapel Hill.</p>
 </div>
 </div>
 <div id="student-honor" class="section level3">
@@ -562,41 +602,44 @@ summary {
 <h3>Class 5: Jan. 27</h3>
 <p><strong>In class:</strong></p>
 <ul>
+<li><p>How data can lie to you</p></li>
 <li>Introduction to R and RStudio
 <ul>
 <li><a href="https://mjwebster.github.io/DataJ/R/Boston_files/SettingUpForRClasses.R" class="uri">https://mjwebster.github.io/DataJ/R/Boston_files/SettingUpForRClasses.R</a></li>
 </ul></li>
 <li>Introduction to markdown and R notebooks</li>
 <li>Installing R packages</li>
-<li>Introduction to variables, operators, lists, functions</li>
+<li><p>Introduction to variables, operators, lists, functions</p></li>
 </ul>
 <p><strong>Homework:</strong></p>
 <ul>
 <li>Read: <a href="https://learn.r-journalism.com/en/introduction/from_excel/from-excel-to-r/">Evolve from Excel to R</a></li>
 <li>Watch: <a href="https://flowingdata.com/2016/07/12/r-in-the-data-journalism-workflow-at-fivethirtyeight/">R in the data journalism workflow at FiveThirtyEight</a></li>
-<li>Read: R for Data Science, &quot;<a href="https://r4ds.had.co.nz/workflow-basics.html">Workflow: basics&quot;</a>
+<li>Skim: R for Data Science, &quot;<a href="https://r4ds.had.co.nz/workflow-basics.html">Workflow: basics&quot;</a>
 <ul>
 <li>Note for here and elsewhere: The printed version of “R for Data Science” has different chapter numbering, so the names of the chapters are what you should pay attention to.)</li>
 </ul></li>
-<li><p>Read: R for Data Science, &quot;<a href="https://r4ds.had.co.nz/workflow-projects.html">Workflow: projects&quot;</a></p></li>
-<li><p>Read: R for Journalists, <a href="https://learn.r-journalism.com/en/how_to_use_r/">“How to use R”</a></p></li>
-<li>Read: R for Data Science, <a href="https://r4ds.had.co.nz/r-markdown.html">“R Markdown”</a></li>
-<li>Read: R for Data Science, <a href="https://r4ds.had.co.nz/r-markdown-workflow.html">R Markdown Workflow</a></li>
-<li><p>Do: <a href="assignments/HW4.">R Assignment 1. Workspace set-up and first R notebook</a> <strong>&lt;–markdown or HTML?</strong></p></li>
+<li>Skim: R for Data Science, &quot;<a href="https://r4ds.had.co.nz/workflow-projects.html">Workflow: projects&quot;</a></li>
+<li>Skim: R for Data Science, <a href="https://r4ds.had.co.nz/r-markdown.html">“R Markdown”</a></li>
+<li>Skim: R for Data Science, <a href="https://r4ds.had.co.nz/r-markdown-workflow.html">R Markdown Workflow</a></li>
+<li>Skim: R for Journalists, <a href="https://learn.r-journalism.com/en/how_to_use_r/">“How to use R”</a></li>
+<li>Do: <a href="assignments/HW4.Rmd">R Assignment 1. Workspace set-up and first R notebook</a></li>
 </ul>
 </div>
 <div id="class-6-jan.29" class="section level3">
 <h3>Class 6: Jan. 29</h3>
 <p><strong>In Class</strong></p>
 <ul>
-<li>Loading Data into R</li>
+<li>Loading MLB Salaries Data into R</li>
+<li>Installing and loading packages</li>
 <li>First steps with data analysis in R</li>
 </ul>
 <p><strong>Homework</strong></p>
 <ul>
-<li>Do: <a href="assignments/HW5.">R Assignment 2</a> <strong>&lt;–markdown or HTML?</strong></li>
+<li>Do: <a href="assignments/HW5.Rmd">R Assignment 2. First steps with data analysis in R using MLB Payrolls</a></li>
+<li>Read: R for Journalists, <a href="https://learn.r-journalism.com/en/wrangling/dplyr/dplyr/">“Transforming and Analyzing Data”</a></li>
+<li>Read: R for Data Science, <a href="https://r4ds.had.co.nz/transform.html">“Data Transformation with Dplyr”</a></li>
 </ul>
-<p><strong>Half of MLB salaries in R. You need to help them with import, NA values and column data types. sum(), colSums(), summary().</strong></p>
 </div>
 </div>
 <div id="week-5" class="section level2">
@@ -605,25 +648,31 @@ summary {
 <h3>Class 7: Feb. 3</h3>
 <p><strong>In Class:</strong></p>
 <ul>
-<li>Summarizing data with pivot tables</li>
+<li>Introduction to Tidyverse and Dplyr packages</li>
+<li>comparison operators, logical operators, missing values, filter(), arrange(), select(), rename()</li>
+<li>Filtering data: Imagine an interview where you can only ask “yes” or “no” questions.</li>
+<li>Computers are hardworking and obient, but they just don’t get you like I do.</li>
+<li>How filtering data is like writing a good records request.</li>
+<li>Work together on replicating MLB Salaries assignment in R</li>
 </ul>
 <p><strong>Homework</strong></p>
 <ul>
-<li>Do: <a href="https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f78f8-3972-4b74-b1a6-7acaa0f90255?panel=Main">Excel Assignment 2</a></li>
+<li>Do: <a href="assignments/HW6.Rmd">HW6. Using filter(), arrange() and select() in R</a></li>
 </ul>
 </div>
 <div id="class-8-feb.5" class="section level3">
 <h3>Class 8: Feb. 5</h3>
 <p><strong>In Class:</strong></p>
 <ul>
-<li>Introduction to Tidyverse and Dplyr packages</li>
-<li>comparison operators, logical operators, missing values, filter(), arrange(), select(), rename()</li>
-<li>Work together on replicating MLB Salaries assignment in R</li>
+<li>Creating new columns with the mutate() function in R</li>
+<li>Work on <a href="assignments/HW7.Rmd">HW7. Mutate</a> together in class</li>
 </ul>
 <p><strong>Homework</strong></p>
 <ul>
-<li>Read: R for Journalists, <a href="https://learn.r-journalism.com/en/wrangling/dplyr/dplyr/">“Transforming and Analyzing Data”</a></li>
-<li>Read: R for Data Science, Chapter 3.</li>
+<li>Complete <a href="assignments/HW7.Rmd">HW7. Mutate</a></li>
+<li>Read: <a href="https://datajournalism.com/read/longreads/what-is-a-data-state-of-mind-and-how-you-can-develop-it">What is a data state of mind, and how can you develop it?</a></li>
+<li>Watch: <a href="https://www.dropbox.com/s/ztzcrb1vh594eue/DataStateofMind2015_video.wmv">Data state of mind</a></li>
+<li>Watch: <a href="https://www.youtube.com/watch?v=lZjsCycecNc&amp;feature=youtu.be">Numbers in the Newsroom</a></li>
 </ul>
 </div>
 </div>
@@ -633,8 +682,11 @@ summary {
 <h3>Class 9: Feb. 10</h3>
 <p><strong>In Class:</strong></p>
 <ul>
-<li>More Dplyr. Mutate(), trasnmuste().</li>
-<li>Continue together on replicating MLB Salaries assignment in R</li>
+<li>Back to Excel: Summarizing data with pivot tables</li>
+</ul>
+<p><strong>Homework</strong></p>
+<ul>
+<li>Do: <a href="https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f78f8-3972-4b74-b1a6-7acaa0f90255?panel=Main">Excel Assignment 2</a></li>
 </ul>
 </div>
 <div id="class.-10-feb.12" class="section level3">

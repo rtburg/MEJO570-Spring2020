@@ -41,6 +41,8 @@ Students in this course will learn how to collect and interpret quantitative dat
 ### ATTENDANCE POLICY:
 As part of their grade, students will submit after each class session one question they wished they had asked about the material covered in class. These submissions will be used to track attendance and will be part of the “daily work” grade, along with homework exercises and reading summaries described later. Students who do not attend a class session will not be allowed to submit a question about the session they missed.
 
+For each class, I will assign one student to take lecture notes that will be shared with other members of the class via Sakai. For the class sessions where we are working in R (starting with Class 5) students will take the lecture notes in an R notebook file. On the day you take notes you will not be responsible for a question.
+
 ### LATE ASSIGNMENTS:
 In general, I need you to turn in your assignments on time so I can give you feedback in time for it to be useful to you. 
 
@@ -62,13 +64,37 @@ I strongly encourage you to purchase a $25 IRE student membership (https://www.i
 Throughout the semester, students will earn points for completing various assignments. Most of the assignments will be given letter grades that correspond to the [numerical values found on the UNC Registrar's site](https://registrar.unc.edu/academic-services/grades/explanation-of-grading-system/). When determining final grades for the course, I will trim the values to the tenths place. (For example, a 3.7 will be an A-, but a 3.70001 will be an A.)
 
 
-|Assignment|Percentage of your grade|
-|----------|------------------------|
-|Attendance questions|10%|
-|Homework and quizzes|40%|
-|Data negotiation|10%|
-|Final|40%|
+|Assignment|Percentage of your grade|Due date
+|----------|------------------------|--------
+|Attendance questions|10%|Each class
+|Homework and quizzes|40%|As assigned
+|Data negotiation|10%|April 15
+|Final|40%|See below
 
+#### Final project
+For the final project you will be learning how to find and report stories in public political campaign finance data by examining reports for candidates who are running for state office in North Carolina this year. 
+
+We will begin work on the final project in Week 7, and it will have portions due throughout the rest of the semester. The final project is due on the final exam date for your section.
+
+|Component|Percentage of your course grade|Due date
+|----------|------------------------|--------------
+|Data analysis|20%|March 30
+|Draft|15%|April 22
+|Final|5%| Date of final exam
+
+
+#### Extra Credit
+In addition to the required assignments, there will be two opportunities to earn extra credit.
+
+If you produce **a published news story that relies on data you receive as part of your records request**, you may earn extra credit of up to 10% of your final grade. Thie story must be published by the last day of class.
+
+You may also complete the [*"How I got the story"*]() extra credit assignment for up to 10% of your final grade. This must be done by Spring Break.
+
+Additionally, every typo, broken link or other error you find in the syllabus before the start of the third week of class will earn you one extra credit point on your participation grade. Send all errors to me via email.
+
+
+
+#### Passing Grades
 If you are a MEJO major using this to satisfy a MEJO course requirement, you must receive at least a C- in the course in order to have the credits count toward your major requirements. 
 
 If you are a MEJO minor, you must receive at least a C in the course in order to have the credits count toward your minor.
@@ -76,14 +102,6 @@ If you are a MEJO minor, you must receive at least a C in the course in order to
 
 Please see “Undergraduate Grade Definitions” and “Graduate Grade Definitions” at https://registrar.unc.edu/academic-services/grades/explanation-of-grading-system/  for a better understanding of what letter grades mean at UNC-Chapel Hill.
 
-#### Extra Credit
-In addition to the required assignments, there will be two opportunities to earn extra credit.
-
-If you produce **a published news story that relies on data you receive as part of your records request**, you may earn extra credit of up to 10% of your final grade. Thie story must be published by the last day of class.
-
-You may also complete the "How I got the story" extra credit assignment for up to 10% of your final grade. This must be done by Spring Break.
-
-Additionally, every typo, broken link or other error you find in the syllabus before the start of the third week of class will earn you one extra credit point on your participation grade. Send all errors to me via email.
 
 
 
@@ -139,7 +157,7 @@ No single course could possibly give you all of these values and competencies; b
 ## COURSE CALENDAR
 
 ## Week 1
-### Class 1: Jan. 9
+### Class 1: Jan. 8
 
 **In class:**
 
@@ -205,6 +223,8 @@ No single course could possibly give you all of these values and competencies; b
 ### Class 5: Jan. 27
 **In class:**
 
+* How data can lie to you
+
 * Introduction to R and RStudio
   * https://mjwebster.github.io/DataJ/R/Boston_files/SettingUpForRClasses.R
 * Introduction to markdown and R notebooks
@@ -216,83 +236,105 @@ No single course could possibly give you all of these values and competencies; b
 
 * Read: [Evolve from Excel to R](https://learn.r-journalism.com/en/introduction/from_excel/from-excel-to-r/)
 * Watch: [R in the data journalism workflow at FiveThirtyEight](https://flowingdata.com/2016/07/12/r-in-the-data-journalism-workflow-at-fivethirtyeight/)
-* Read: R for Data Science, "[Workflow: basics"](https://r4ds.had.co.nz/workflow-basics.html)
+* Skim: R for Data Science, "[Workflow: basics"](https://r4ds.had.co.nz/workflow-basics.html)
   * Note for here and elsewhere: The printed version of "R for Data Science" has different chapter numbering, so the names of the chapters are what you should pay attention to.) 
-* Read: R for Data Science, "[Workflow: projects"](https://r4ds.had.co.nz/workflow-projects.html)
-* Read: R for Data Science, ["R Markdown"](https://r4ds.had.co.nz/r-markdown.html)
-* Read: R for Data Science, [R Markdown Workflow](https://r4ds.had.co.nz/r-markdown-workflow.html)
-* Read: R for Journalists, ["How to use R"](https://learn.r-journalism.com/en/how_to_use_r/) 
-* Do: [R Assignment 1. Workspace set-up and first R notebook](assignments/HW4.Rmd) **
+* Skim: R for Data Science, "[Workflow: projects"](https://r4ds.had.co.nz/workflow-projects.html)
+* Skim: R for Data Science, ["R Markdown"](https://r4ds.had.co.nz/r-markdown.html)
+* Skim: R for Data Science, [R Markdown Workflow](https://r4ds.had.co.nz/r-markdown-workflow.html)
+* Skim: R for Journalists, ["How to use R"](https://learn.r-journalism.com/en/how_to_use_r/) 
+* Do: [R Assignment 1. Workspace set-up and first R notebook](assignments/HW4.Rmd)
 
 ### Class 6: Jan. 29
 **In Class**
 
-* Loading Data into R
+* Loading MLB Salaries Data into R
+* Installing and loading packages
 * First steps with data analysis in R
 
 **Homework**
 
-* Do: [R Assignment 2](assignments/HW5.) **<--markdown or HTML?**
+* Do: [R Assignment 2. First steps with data analysis in R using MLB Payrolls](assignments/HW5.Rmd) 
+* Read: R for Journalists, ["Transforming and Analyzing Data"](https://learn.r-journalism.com/en/wrangling/dplyr/dplyr/)
+* Read: R for Data Science, ["Data Transformation with Dplyr (Sections on filter, arrange and select)"](https://r4ds.had.co.nz/transform.html) 
 
-**Half of MLB salaries in R. You need to help them with import, NA values and column data types. sum(), colSums(), summary().**
+
 
 ## Week 5
 ### Class 7: Feb. 3
-**In Class:** 
-
-* Summarizing data with pivot tables
-
-**Homework**
-
-* Do: [Excel Assignment 2](https://sakai.unc.edu/portal/site/bf11958a-9369-4612-b072-1ff5e9e758bd/tool/8e6f78f8-3972-4b74-b1a6-7acaa0f90255?panel=Main)
-
-
-### Class 8: Feb. 5
 **In Class:**
 
 * Introduction to Tidyverse and Dplyr packages
 * comparison operators, logical operators, missing values, filter(), arrange(), select(), rename()
+* Filtering data: Imagine an interview where you can only ask "yes" or "no" questions.
+* Computers are hardworking and obient, but they just don't get you like I do.
+* How filtering data is like writing a good records request.
 * Work together on replicating MLB Salaries assignment in R
 
 **Homework**
 
-* Read: R for Journalists, ["Transforming and Analyzing Data"](https://learn.r-journalism.com/en/wrangling/dplyr/dplyr/)
-* Read: R for Data Science, Chapter 3. 
+* Do: [HW6. Using filter(), arrange() and select() in R](assignments/HW6.Rmd) 
+* Read: R for Data Science, ["Data Transformation with Dplyr (Section on mutate)"](https://r4ds.had.co.nz/transform.html#add-new-variables-with-mutate) 
+
+
+
+### Class 8: Feb. 5
+
+**In Class:**
+
+* Creating new columns with the mutate() function in R
+* Work on [HW7. Mutate](assignments/HW7.Rmd) together in class
+
+**Homework**
+
+* Complete [HW7. Mutate](assignments/HW7.Rmd)
+* Read: [What is a data state of mind, and how can you develop it?](https://datajournalism.com/read/longreads/what-is-a-data-state-of-mind-and-how-you-can-develop-it)
+* Watch: [Data state of mind](https://www.dropbox.com/s/ztzcrb1vh594eue/DataStateofMind2015_video.wmv)
+* Watch: [Numbers in the Newsroom](https://www.youtube.com/watch?v=lZjsCycecNc&feature=youtu.be)
+
+
 
 ## Week 6
 ### Class 9: Feb. 10
-**In Class:**
 
-* More Dplyr. Mutate(), trasnmuste(). 
-* Continue together on replicating MLB Salaries assignment in R
+**In Class:** 
+
+* Back to Excel: Summarizing data with pivot tables
+
+**Homework**
+
+* Do: [Excel Assignment 2](assignments/HW8.html)
+* Read: R for Data Science, ["Data Transformation with Dplyr (Section on group_by and summarie)"](https://r4ds.had.co.nz/transform.html#grouped-summaries-with-summarise) 
+* Read: R for Journalists,["Tidying and joining data" (just the spread and gather sections)](https://learn.r-journalism.com/en/wrangling/tidyr_joins/tidyr-joins/)
+* Read: R for Data Science, ["Tidy data" (just 12.1-12.3)](https://r4ds.had.co.nz/tidy-data.html#spreading-and-gathering)
 
 
 ### Class. 10: Feb. 12
 **In Class:**
 
-* Day 3 Dpyler. piping, group_by(), summarize() … and summary function
-* Continue together on replicating MLB Salaries assignment in R
+* Doing pivot tables in R with group_by(), summarize() and spread()
+* Work on start of HW9 in class
 
 **Homework:**
 
-* Do: [Analyzing UNC Salaries in R](assignments/HW5.)
+* Do: [Analyzing UNC Salaries in R](assignments/HW9.Rmd)
 
 ## Week 7
 ### Class 11: Feb. 17
 
 **In Class:**
 
-* Importing Data into R
+* Review group_by(), summarize() and spread()
+* Importing data into R
 * Dealing with different filetypes
-* Data types
-* Renaming Columns
+* Changing data types
+* Renaming columns
 * Dealing with missing variables
 
 **Homework:**
 
 * Read: R for Data Science, Chapter 8
 * Read: R for Journalists, [Chapter 2](https://learn.r-journalism.com/en/importing_exporting/) 
-* Do: [Importing/Exporting Assignment](assignments/HW6.) (with campaign finance and other data??)
+* Do: [Importing/Exporting Assignment](assignments/HW10.) (with campaign finance and other data??)
 
 ### Class 12: Feb. 19
 **In Class:**
@@ -313,7 +355,7 @@ No single course could possibly give you all of these values and competencies; b
 
 **Homework**
 
-*Read: R for Data Science, Chapter 5
+* Read: R for Data Science, Chapter 5
 
 ### Class 14: Feb. 26
 **In Class:**
@@ -340,8 +382,13 @@ No single course could possibly give you all of these values and competencies; b
 ### Class 16: March 4
 **In Class:**
 
-* Data shaping. Gather(), spread(), separate(), unite() 
-* case_when() and cast()
+* More useful R tricks:
+  * if_else()
+  * case_when()
+  * separate()
+  * unite()
+  * cast()
+  * gather()
 
 **Homework:**
 

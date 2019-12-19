@@ -1,0 +1,48 @@
+---
+title: "HW8: Excel Pivot Tables"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+While reading MaryJo Webster's [Excel Pivot Table tutorial](https://mjwebster.github.io/DataJ/pivottables.html), follow along by completing these tasks and answering these questions.
+
+
+When you are done with the tutorial, upload both a Word document with answers to these questions as well as the spreadsheet file that shows your work.
+
+**Questions for the Word doc**
+
+Please just write the numerical answers.
+
+1. How many crimes were reported in the Shingle Creek neighborhood?
+
+2. How many of the incidents in the Shingle Creek neighborhood had an "Offense" of "THEFT"?
+
+3. How many crimes were reported in Shingle Creek in August?
+
+4. Of all the crimes that happened in Shingle Creek from June to August, what percent were in August?
+
+5. Come up with your own reporting question using the police incidents data. Write that question, create a pivot table to answer it, and write a one-sentence summary of the answer the data gave you.
+
+
+**Excel Tasks** 
+
+1. Download the Minneapolis Police Reports Excel spreadsheet file that Webster has linked from her tutorial. Open it and save it as a renamed file where you add your last name to the end of the existing filename.
+
+2. In the Police_Incidents_2015 worksheet, insert a new column between the ReportedDate and BeginDate columns. Give that column a title of “month” and use the MONTH() function to fill each cell in the column with the numerical value of the month in which each incident occurred.
+
+3. Create a Pivot Table in a new sheet that shows the number of incidents reporting in each neighborhood.
+
+4. Create a Pivot Table in a new sheet that shows for each neighborhood the number of crimes that was some kind of theft.
+
+5. Create a Pivot Table in a new sheet that shows for each neighborhood the number of crimes in each month.
+
+6. Create a Pivot Table just like in #5, but display the values as a percent of each row.
+
+7. Download the MLBpayrolls Excel spreadsheet file that Webster has linked from her tutorial. Open it and save it as a renamed file where you add your last name to the end of the existing filename.
+
+8. Using the “Twins-Brewers” tab, create a Pivot Table in a new sheet that shows the total salary made by all players at each position. Be sure to format the salary values as numbers.
+  * Add to that Pivot Table a column that shows the number of players at each position.
+
+9. Create a Pivot Table in a new sheet that shows the average salary that each team pays for all players at each position.

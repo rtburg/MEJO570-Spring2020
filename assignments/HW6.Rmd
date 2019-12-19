@@ -1,0 +1,76 @@
+---
+title: "HW6: Filter"
+author: "FIRSTNAME LASTNAME"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+time: "`r format(Sys.time(), '%H:%M')`"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+##Instructions
+Complete this assignment in RStudio. Run all of the chunks, then Knit the markdown file to html. Upload that HTML file to the HW6 assignment on Sakai.
+
+###Load the tidyverse package(s)
+```{r}
+#install.packages("tidyverse")
+library(tidyverse)
+```
+
+
+### Load the data
+If you have not already loaded the MLB salary data into R, run the following code chunk. WARNING: If you run this chunk and you already have a dataframe called "MLBPayrolls" then this will overwrite it. That probably won't be a big deal, but I just wanted to make you aware for future cases where it might be a big deal.
+
+```{r}
+library(readxl)
+#download.file("https://mjwebster.github.io/DataJ/spreadsheets/MLBpayrolls.xls", "MLBPayrolls.xls")
+MLBpayrolls <- read_excel("../data/MLBpayrolls.xls", sheet = "MLB Payrolls", na = "n/a", .name_repair = "universal")
+MLBpayrolls
+```
+
+
+### 1. Sort the teams so they appear in reverse alphabetical order.
+```{r}
+
+```
+
+
+### 2. Did any teams pay see their payroll jump from less than $100 million in 2004 to more than $200 million by 2016?
+```{r}
+
+```
+
+
+### 3. What teams saw their payrolls double between 2004 and 2016?
+```{r}
+
+```
+
+### 4. How many teams in 2016 have a payroll that is higher than the top payroll in 2004?
+```{r}
+
+```
+
+
+
+### 5. Write an R question that tells us the 2016 payrolls for just the teams in California. 
+```{r}
+
+```
+
+### 6. Save the 2016 payrolls for just the California teams to a new dataframe called CA2016.
+
+```{r}
+
+```
+
+### 7. Come up with your own question for the MLBpayrolls data. Then ask that question in R and write a sentence that translates the answer you get back into English.
+
+```{r}
+
+
+# Replace this comment with your sentence.
+```
+
