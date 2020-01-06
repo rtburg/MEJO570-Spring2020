@@ -2,7 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
-
 data/*
-
 assignments/*-key
+.DS_Store
