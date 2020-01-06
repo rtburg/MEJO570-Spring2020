@@ -3,12 +3,12 @@ title: "Syllabus: JOMC570 Data Driven Journalism - Spring 2020"
 author: "Ryan Thornburg"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output: 
-  pdf_document:
-    toc: yes
   html_document:
     theme: cosmo
     toc: yes
     toc_float: yes
+  pdf_document:
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}
