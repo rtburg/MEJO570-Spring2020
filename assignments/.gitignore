@@ -1,1 +1,5 @@
-HW5-key.Rmd
+*.Rproj
+*.RData
+assignments/Police_Incidents_2015.xlsx
+assignments/_site.yml
+assignments/site_libs/
