@@ -1,0 +1,112 @@
+---
+title: "HW10: Importing"
+author: "FIRSTNAME LASTNAME"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+time: "`r format(Sys.time(), '%H:%M')`"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+##Instructions
+Complete this assignment in RStudio. Run all of the chunks, then Knit the markdown file to html. Upload that HTML file to the HW6 assignment on Sakai.
+
+###Load the tidyverse package(s)
+```{r}
+#install.packages("tidyverse")
+library(tidyverse)
+```
+
+
+###Yancey County voter registration. Replace with your relevant counties.
+```{r}
+temp <- tempfile()
+
+download.file("https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvoter100.zip",temp)
+
+voters_yancey <- read_delim(unz(temp, "ncvoter100.txt"),"\t", escape_double = FALSE, trim_ws = TRUE, locale = locale(encoding = "UTF8"),na = c("", " "), col_types = cols(.default = "c"))
+
+unlink(temp)
+```
+
+###2019 Municipal Election Results
+```{r}
+temp <- tempfile()
+
+download.file("https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2019_11_05/results_pct_20191105.zip",temp)
+
+voters_yancey <- read_delim(unz(temp, "results_pct_20191105.txt"),"\t", escape_double = FALSE, trim_ws = TRUE, locale = locale(encoding = "UTF8"),na = c("", " "), col_types = cols(.default = "c"))
+
+unlink(temp)
+```
+
+###Yancey County voter history. Replace with your counties.
+```{r}
+temp <- tempfile()
+
+download.file("https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvhis100.zip",temp)
+
+vhis_yancey <- read_delim(unz(temp, "ncvhis100.txt"),"\t", escape_double = FALSE, trim_ws = TRUE, locale = locale(encoding = "UTF8"),na = c("", " "), col_types = cols(.default = "c"))
+
+unlink(temp)
+```
+
+###Candidate filing
+```{r}
+candidates2020 <- read_csv("https://s3.amazonaws.com/dl.ncsbe.gov/Elections/2020/Candidate%20Filing/Candidate_Listing_2020.csv", 
+    col_types = cols(candidacy_dt = col_date(format = "%m/%d/%Y"), 
+        election_dt = col_date(format = "%m/%d/%Y")))
+View(Candidate_Listing_2020)
+```
+
+
+###Campaign Finance. Replace with your candidate.
+```{r}
+
+url <- "https://cf.ncsbe.gov/CFOrgLkup/ExportDetailResults/?ReportID=168216&Type=REC&Title=Cooper%20for%20North%20Carolina%20-%202019%20Mid%20Year%20Semi-Annual"
+
+#read_csv() does not do a great job here guessing the correct col_types, so we have to define them explicitly.
+
+cooper_rcpts_2019A <- read_csv(url, 
+    col_types = cols(
+      `Account Abbr` = col_character(), 
+        City = col_character(), 
+      `Country Name` = col_character(), 
+        Date = col_date(format = "%m/%d/%Y"), 
+        Description = col_character(), 
+      `Employers Name` = col_character(), 
+        `Full Zip` = col_character(), 
+      `Outside US Postal Code` = col_character(), 
+        Profession = col_character(), 
+      Purpose = col_character(), 
+        State = col_character(), 
+      `Street 1` = col_character(), 
+        `Street 2` = col_character()),
+    skip = 1)
+
+#Finally, we should rename the columns to remove spaces and generally promote brevity.
+
+names(cooper_rcpts_2019A) <- c("date","prior","donor","street1","street2","city","state","zip","country","postal","profession","employer","purpose","type","account","payment_form","description","amount","sum_to_date")
+
+```
+
+
+#Lobbyists. (Tab delimited). 
+```{r}
+temp <- tempfile()
+
+download.file("https://sosnc.gov/imaging/Dime/20191219/a882197628a9427f936b988405748d00.zip",temp)
+
+lobbyists2020 <- read_delim("~/Downloads/Lobbyist Export", 
+    "\t", escape_double = FALSE, col_types = cols(LobbyAddress2 = col_character(), 
+        PrinTitle = col_character()), trim_ws = TRUE)
+View(Lobbyist_Export)
+
+unlink(temp)
+```
+
+
+
+
