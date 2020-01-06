@@ -3,12 +3,12 @@ title: "Syllabus: JOMC570 Data Driven Journalism - Spring 2020"
 author: "Ryan Thornburg"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output: 
+  pdf_document:
+    toc: no
   html_document:
     theme: cosmo
     toc: yes
     toc_float: yes
-  pdf_document:
-    toc: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -349,7 +349,7 @@ No single course could possibly give you all of these values and competencies; b
 
 **Homework**
 
-* Read: Numbers in the Newsroom, Chapter 2  **NEED COPY**
+* Read: [Numbers in the Newsroom, Chapter 2](https://ares.lib.unc.edu/ares/ares.dll?SessionID=D161147732A&Action=10&Type=10&Value=109111293)
 * Do: [Reading summaries 5](assignments/reading-summaries.html)
 
 * Do: R for Data Science, 3.2.4 Exercises 1,2,4,5
@@ -362,7 +362,6 @@ No single course could possibly give you all of these values and competencies; b
 ### Class 13: Feb. 24
 **In Class:**
 
-* Numbers in the Newsroom Reading Quiz
 * Continuous vs. categorical variables in visualization
 * Visually exploring campaign finance reports
 
@@ -466,8 +465,8 @@ Optional:
 
 **Homework:**
 
-* Read: Numbers in the Newsroom, Chapter 1
-* Read: Numbers in the Newsroom, Chapter 6
+* Read: [Numbers in the Newsroom, Chapter 1](https://ares.lib.unc.edu/ares/ares.dll?SessionID=D161147732A&Action=10&Type=10&Value=109111293)
+* Read: [Numbers in the Newsroom, Chapter 6](https://ares.lib.unc.edu/ares/ares.dll?SessionID=D161147732A&Action=10&Type=10&Value=109111293)
 * Do: [Reading summaries 6](assignments/reading-summaries.html)
 
 ## Week 12
@@ -506,7 +505,7 @@ Optional:
 ### Class 25: April 13
 **Homework:**
 
-* Read: Numbers in the Newsroom, Chapter 3
+* Read: [Numbers in the Newsroom, Chapter 3](https://ares.lib.unc.edu/ares/ares.dll?SessionID=D161147732A&Action=10&Type=10&Value=109111293)
     * Do: [Reading summaries 7](assignments/reading-summaries.html)
 * Read: R for Journalists, [Chapter 4](https://learn.r-journalism.com/en/visualizing/)
 * Read: R for Data Science, ["Graphics for communication with ggplot"]()
