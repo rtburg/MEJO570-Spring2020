@@ -1,0 +1,122 @@
+---
+title: "Class 13: Visualizing Campaign Finance data"
+author: "FIRSTNAME LASTNAME"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+time: "`r format(Sys.time(), '%H:%M')`"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+##Instructions
+Today in class we will begin dealing with messy text data -- names, professions and employers in the campaign finance data.
+
+
+###Load the tidyverse package(s)
+Also, explicitly load stringr package.
+And install _and_ load htmlwidgets package, which is a dependentcy of a lot of the coolest things in stringr.
+```{r}
+#install.packages("tidyverse")
+library(tidyverse)
+library(stringr)
+#install.packages("htmlwidgets")
+library(htmlwidgets)
+```
+
+
+###Load the data 
+```{r}
+
+#url <- "https://cf.ncsbe.gov/CFOrgLkup/ExportDetailResults/?ReportID=168216&Type=REC&Title=Cooper%20for%20North%20Carolina%20-%202019%20Mid%20Year%20Semi-Annual"
+
+#read_csv() does not do a great job here guessing the correct col_types, so we have to define them explicitly.
+
+#cooper_rcpts_2019A <- read_csv(url, 
+#    col_types = cols(
+#      `Account Abbr` = col_character(), 
+#        City = col_character(), 
+#      `Country Name` = col_character(), 
+#        Date = col_date(format = "%m/%d/%Y"), 
+#        Description = col_character(), 
+#      `Employers Name` = col_character(), 
+#        `Full Zip` = col_character(), 
+#      `Outside US Postal Code` = col_character(), 
+#        Profession = col_character(), 
+#      Purpose = col_character(), 
+#        State = col_character(), 
+#      `Street 1` = col_character(), 
+#        `Street 2` = col_character()),
+#    skip = 1)
+
+#Finally, we should rename the columns to remove spaces and generally promote brevity.
+
+#names(cooper_rcpts_2019A) <- c("date","prior","donor","street1","street2","city","state","zip","country","postal","profession","employer","purpose","type","account","payment_form","description","amount","sum_to_date")
+```
+
+
+If you wanted to find donors who work for the Universit of North Carolina at Chapel Hill.
+
+Find all the university employers
+```{r}
+cooper_rcpts_2019A %>%
+  filter(str_detect(employer, "UNIVERSITY"))
+```
+
+```{r}
+cooper_rcpts_2019A %>%
+  filter(str_detect(employer, "UNC"))
+```
+
+
+
+```{r}
+cooper_rcpts_2019A %>%
+  filter(str_detect(employer, "U/. OF"))
+```
+
+```{r}
+cooper_rcpts_2019A %>%
+  filter(str_detect(employer, "UNC") | str_detect(employer, "UNIVERSITY") | str_detect(employer, "U/. OF") )
+```
+
+```{r}
+cooper_rcpts_2019A %>%
+  filter(str_detect(employer, "^UNC") | str_detect(employer, "UNIVERSITY") | str_detect(employer, "U/. OF") | str_detect(profession, "PROF"))
+```
+####UGH. How do you make sure UNC doesn't match BUNCOME. FIXED.
+
+```{r}
+cooper_rcpts_2019A %>%
+  filter(str_detect(profession, "PROF"))
+```
+
+
+### JUST PROFESSORS
+### ANYONE WHO WORKS AT A UNIVERSITY
+
+### INCLUDING RETIRED PROFESSORS
+
+###In vhis, create a new column that just stories whether it was a general election or not.
+
+### Replace "UNC" with "UNIVERSITY OF NORTH CAROLINA" in a new column called NewEmp. (Also, note why this doesn't really work.)
+
+```{r}
+coop_new <- cooper_rcpts_2019A %>%
+  mutate(NewEmp = str_replace(employer, "^UNC", "UNIVERSITY OF NORTH CAROLINA"))
+```
+
+```{r}
+coop_new %>%
+  filter(str_detect(employer, "^UNC") )
+```
+
+
+### Split donor names
+```{r}
+coop_new<- cooper_rcpts_2019A %>%
+  filter(donor != "Aggregated Individual Contribution") %>%
+  mutate(LastName = str_split(donor, " ", simplify=FALSE))
+```
+

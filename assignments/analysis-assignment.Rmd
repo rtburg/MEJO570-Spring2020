@@ -1,0 +1,34 @@
+---
+title: "Data Analysis Assignment"
+output:   
+  html_document:
+    theme: cosmo
+---
+
+For the analysis, you just have to answer the questions I give you. Plus have a reporting question or hypothesis you will use for your story. Plus a visualization.
+
+### Standard assignment
+* Contributions to a candidate
+
+### 10% bonus
+* Candidate votes by precinct, most recent election only 
+* Voter demographics by precinct, current only (ncvoter)
+
+### 20% bonus
+* Voter participation, by precinct and demographics (current precincts only. ncvoter + ncvhis) 
+* Candidate votes by precinct, back to 2010 
+* Change in voter registration, by precinct and demographics (using historic snapshots)
+
+
+
+## Analysis questions
+Students doing the standard analysis must fill out the values in the attached **[analysis answer template](assignments/analysis-answer-template.xlsx)**. This will be worth 60 points.
+
+(Students working on one of the bonus assignments will work with me to develop similar questions appropriate for their chosen difficulty level.)
+
+All students must also come up with **one answer to a "reporting question" of their own choice** that they will persue as the primary reporting question for their final story assignment. (20 points)
+
+Finally, all students must also include **one exploratory visualization** of the aspect you think is most interesting. It does not have to be production quality, but it must be clear, correct and appropriate for the type of data being displayed. (20 points)
+
+Upload to Sakai your Rmd file and the html file you knit from the Rmd file.
+

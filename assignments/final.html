@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Final Project</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Final Project</h1>
+
+</div>
+
+
+<p>The final assignment gives you a chance to apply all the things you learned in the course. We will begin working on the assignment around the 11th class of the semester. The project will build over the following eight weeks, culminating in a story due on the date of the final.</p>
+<p>It will be an original explanaotry story driven by questions you have while looking at political campaign and other related data. All together the work you do toward your final project will be 40% of your course grade.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Percentage of your course grade</th>
+<th>Due date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Data analysis</td>
+<td>20%</td>
+<td>March 30</td>
+</tr>
+<tr class="even">
+<td>Draft</td>
+<td>15%</td>
+<td>April 22</td>
+</tr>
+<tr class="odd">
+<td>Final</td>
+<td>5%</td>
+<td>Date of final exam</td>
+</tr>
+</tbody>
+</table>
+<p>The final story will be about 2,000 written words and it will have have these sections:</p>
+<ul>
+<li><p><strong>What’s news?</strong> This brief paragraph will describe the main finding of your analysis. Here is a <a href="http://multimedia.jmc.uiowa.edu/fall2012/files/2012/08/rt-m2-tipsheet.pdf">guide to finding the news in data</a>.</p></li>
+<li><p><strong>So what?</strong> This section can be one or more paragraphs. It describes more in depth why the reader should care about your main finding. It may explain more in depth about what is normal and in what ways your main finding is unusual, or how it might help understand political campaigns in North Carolina. In this and other sections, you will use human sources to help put the data into context as well as provide possible explanations of the possible reasons and causes of your insight. Direct quotes are not required, but talking to human sources is mandatory.</p></li>
+<li><p><strong>Compared to what?</strong> This section examines your main finding in comparison to other data points. The best stories will make comparisons across more than one of time, place or category.</p></li>
+<li><p><strong>What else? or What next?</strong> The final section of the story looks ahead at how your insight might affect future political campaigning, or what might cause your data points to change in the future. In this section you will highlight your “known unkowns” and maybe foreshadow additional reporting that could be done by you or someone else looking at the data.</p></li>
+</ul>
+<div id="final-deliverables" class="section level3">
+<h3>Final Deliverables</h3>
+<p>Your final story will be one of several elements uploaded to Github. In the last week of class you will learn how to publish your work on Github. Your final Github “repository” will include:</p>
+<ul>
+<li>Written analysis uploaded as a PDF or HTML file</li>
+<li>A Readme file explaining your work</li>
+<li>An .Rmd file with your R code written in such a way that anyone else could just hit run and replicate your analysis.</li>
+<li>An HTML version of the .Rmd file</li>
+<li>Any OpenRefine scripts you used for your final analysis</li>
+<li>Any .csv files of data that you manipulated before loading into R.</li>
+</ul>
+</div>
+<div id="detailed-work-plan" class="section level3">
+<h3>Detailed Work Plan</h3>
+<p>Starting in Week 7, we will begin working with campaign finance data. We will be working with a certain set of data in class, but you will be given another contest to analyze for your final project. You will eventually be paired with another student doing the other candidate in the race.</p>
+<p>From Feb. 17 - March 25 we will learn the skills needed to complete the data analysis that is due March 30.</p>
+<p>From April 6 - 22 you will be focused on adding the how, why, so what to your story by doing additional analysis.</p>
+<p>From April 3 - April 22 you will work on incorporating your analysis into a draft of your final written story.</p>
+<p>From April 25 until the date of your final you will use my feedback on your draft to put the finishing touches on your final project.</p>
+</div>
+<div id="grading-of-final-project" class="section level3">
+<h3>Grading of final project</h3>
+<p>The final project will be worth 20 points, allocated as follows:</p>
+<ul>
+<li>Clear lead that summarizes main point: 1-4 points</li>
+<li>Overall news value. Clearly explains So What?: 1-4 points</li>
+<li>Highlights or explains main points by making comparisons: 1-4 points</li>
+<li>Includes context from experts or witnesses: 1-4 points</li>
+<li>Writing organization. One idea per paragraph. Free of passive voice. Correct word usage. Avoids unneccesarily long sentences. 1-4 points.</li>
+</ul>
+<p>You may also have points deducated, as follows:</p>
+<ul>
+<li>Spelling and grammar errors, each -1 point</li>
+<li><p>Each fact error, -5 points.</p></li>
+<li>Missing or incomplete Readme file (-1 to -4 points)</li>
+<li>Missing or incomplete .Rmd file (-1 to -4 points)</li>
+<li>Missing HTML version of the .Rmd file (-1)</li>
+<li>Missing OpenRefine scripts you used for your final analysis, if applicable (-1)</li>
+<li><p>Missing .csv files of data that you manipulated before loading into R, if applicable (-1)</p></li>
+</ul>
+<p>And, you can earn some extra credit points:</p>
+<ul>
+<li>Include a publication quality data visualization created in R: +1-4 points</li>
+<li>Use data that had to be requested or scraped: +1-4 points *Extra credit: Uses data that was not give to you in class, and joined to make a newsworthy comparison +2-4 points</li>
+</ul>
+<div id="grade-breaks" class="section level4">
+<h4>Grade breaks</h4>
+<p>A: 17-20 points</p>
+<p>B: 12-16 points</p>
+<p>C: 9-11 points</p>
+<p>D: 5-8 points</p>
+<p>F: &lt; 5 points</p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+---
+title: "Records Negotiations"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+One of the paradoxes of data journalism is that while we are awash in data, the data we need to find the story is often not readily available online in a complete, current and machine readable format. Part of the data journalist's value proposition is that they are able to use state and federal public records laws to acquire the data they need to answer questions of public importance.
+
+This assignment gives you the opportunity to learn the practice of public data acquisition by doing it. _This assignment is about process, not result._
+
+This project will begin the second week of class and will be something you work on a little bit every week until the 14th week of class. On the date of our class final each student will have a few minutes to share their experience with the rest of the class.
+
+For this assignment, you will [use MuckRock identify a data set](https://www.muckrock.com/foi/list/?minimum_pages=&q=&has_crowdfund=None&date_range_0=&date_range_1=&status=&has_embargo=None&search_title=Example+State+Data+Requests) that is held by a state or local government agency in North Carolina that is not already available in current, complete, and machine readable format on the Internet. 
+
+Your deliverable will be a diary of your weekly efforts to acquire that data and your presentation on the date of our class final. I'll have more details when we kick off the assignment the second week of class.
+
+Grading for this assignment has a "degree of difficulty" component, which means that you will be rewarded for your persistance and ambition. Your assignment will earn a _maximum of 100 points_, as follows:
+
+* obtained the data (+60 points)
+* obtained written documentation needed to understand the data, such as a data dictionary and/or code book (+10 points)
+* requested data has public news value (+10 pts)
+* records request letter is addressed to right person, clearly asked for data, and requested data that actually exists (+ 10 pts)
+* talked with records custodian _before_ writing letter (+10 pts)
+* checked in on request at least once every 14 days (+35 pts)
++ asked for same (or nearly the same) data from more than one agency (+20 pts)
+* talked to a "nerd in the basement" (+10 pts)
+* evidence of kindness in written communication (+5 pts)
++ encountered a technical objection (+5 pts)
++ overcame technical objection (+5 pts)
++ encountered a privacy objection (+5 pts)
++ overcame privacy objection (+5 pts)
++ encountered a "trade secrets" objection (+5 pts)
++ overcame "trade secrets" objection (+5 pts)
++ overcame "data does not exist" objection (+5 pts)
+
+
+
+
+
+

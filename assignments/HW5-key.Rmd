@@ -25,9 +25,9 @@ If you have not already loaded the MLB salary data into R, run the following cod
 
 ```{r}
 library(readxl)
-download.file("https://mjwebster.github.io/DataJ/spreadsheets/MLBpayrolls.xls", "MLBPayrolls.xls")
+download.file("https://mjwebster.github.io/DataJ/spreadsheets/MLBpayrolls.xls", "data/MLBPayrolls.xls")
 MLBpayrolls <- read_excel("MLBpayrolls.xls", 
-    sheet = "MLB Payrolls", na = "n/a")
+    sheet = "MLB Payrolls", na = "n/a", .name_repair = "universal")
 ```
 
 
@@ -46,19 +46,19 @@ summary(MLBpayrolls)
 
 ### 3. Use the sum() function to calculate the total payroll of all teams in 2004
 ```{r}
-sum(    sum(     MLBpayrolls$`Payroll 2004`     )     )
+sum(    sum(     MLBpayrolls$Payroll.2004     )     )
 ```
 
 
 ### 4. Use the mean() function to calculate the average payroll of teams in 2004
 ```{r}
-mean(    mean(MLBpayrolls$`Payroll 2004`         )    )
+mean(    mean(MLBpayrolls$Payroll.2004         )    )
 ```
 
 
 ### 5. Now use the sum() function to calculate the payroll of all teams in 2002. After you get your answer, write a sentence explaining how and why your answer here is different than you answer to the first quesiton. (Hint: try to sum the TEAM column and see what happens.)
 ```{r}
-sum(MLBpayrolls$`Payroll 2002`)
+sum(MLBpayrolls$Payroll.2002)
 #There are NA values for the Washington Nationals in 2002, and the sum() function only works on numeric values
 ```
 

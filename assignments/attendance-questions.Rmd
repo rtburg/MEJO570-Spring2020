@@ -1,0 +1,29 @@
+---
+title: "Attendance Questions"
+output:
+  html_document:
+    theme: cosmo
+---
+
+One of the most important attributes of a successful reporter is their curiosity. This assignment both gives me a chance to make sure you're more than just physically present in class and gives you the opportunity to push and stretch the content of the course to fit your own curiosity and interests. 
+
+Within 24 hours after each class meeting, you will go to the Forums section in Sakai and post one question that seeks clarification or additional context on something we covered in that class period. Be as specific as possible, and try to ask a question that would truly be useful. ([How do I post to a forum topic?](http://sakai.screenstepslive.com/s/sakai_help/m/68426/l/728595-how-do-i-post-to-a-forum-topic))
+
+The questions will be anonymous, so you should feel free to ask anything you want. I may answer your question in the forum or in class, so be sure to check there for answers to questions you may have throughout the semester.
+
+
+
+### Example Questions
+
+**March 6:**
+You kept mentioning something about crosstabs. What’s a crosstab?
+
+**April 12:**
+How did ProPublica get the data for the map they made? I understand that the population numbers came from the census, but how did they get the data about the nail salons?
+
+
+Each question will be graded on a scale of 1-4. I’m looking for questions that are relevant, specific and extend the class conversation. Asking questions that were specifically answered in class indicate that you were not paying attention and will receive a maximum of 2 points. Late assignments will receive a maximum of 3 points.
+
+
+
+

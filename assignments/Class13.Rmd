@@ -1,0 +1,267 @@
+---
+title: "Class 13: Visualizing Campaign Finance data"
+author: "FIRSTNAME LASTNAME"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+time: "`r format(Sys.time(), '%H:%M')`"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+##Instructions
+Today in class we will begin exploring the campaign finance reports of Gov. Roy Cooper. For homework  —- in preparation for your final report -- you will do the same analysis for your candidate.
+
+
+###Load the tidyverse package(s)
+```{r}
+#install.packages("tidyverse")
+library(tidyverse)
+```
+
+
+###Load the data 
+```{r}
+url <- "https://cf.ncsbe.gov/CFOrgLkup/ExportDetailResults/?ReportID=168216&Type=REC&Title=Cooper%20for%20North%20Carolina%20-%202019%20Mid%20Year%20Semi-Annual"
+
+#read_csv() does not do a great job here guessing the correct col_types, so we have to define them explicitly.
+
+#cooper_rcpts_2019A <- read_csv(url, 
+#    col_types = cols(
+#      `Account Abbr` = col_character(), 
+#        City = col_character(), 
+#      `Country Name` = col_character(), 
+#        Date = col_date(format = "%m/%d/%Y"), 
+#        Description = col_character(), 
+#      `Employers Name` = col_character(), 
+#        `Full Zip` = col_character(), 
+#      `Outside US Postal Code` = col_character(), 
+#        Profession = col_character(), 
+#      Purpose = col_character(), 
+#        State = col_character(), 
+#      `Street 1` = col_character(), 
+#        `Street 2` = col_character()),
+#    skip = 1)
+
+#Finally, we should rename the columns to remove spaces and generally promote brevity.
+
+#names(cooper_rcpts_2019A) <- c("date","prior","donor","street1","street2","city","state","zip","country","postal","profession","employer","purpose","type","account","payment_form","description","amount","sum_to_date")
+```
+
+#One Numeric Variable
+```{r}
+cooper_rcpts_2019A %>%
+  ggplot(mapping = aes(x = amount)) +
+  geom_histogram()
+```
+
+```{r}
+cooper_rcpts_2019A %>%
+  ggplot(mapping = aes(x = amount)) +
+  geom_histogram(bins = 2)
+```
+
+
+
+```{r}
+cooper_rcpts_2019A %>%
+  ggplot(mapping = aes(x = amount)) +
+  geom_histogram(bins = 8)
+```
+
+
+
+```{r}
+cooper_rcpts_2019A %>%
+  filter(amount > 5400)
+```
+
+```{r}
+cooper_rcpts_2019A %>%
+  filter(amount <= 5400) %>%
+  ggplot(mapping = aes(x = amount)) +
+  geom_histogram()
+```
+
+
+```{r}
+cooper_rcpts_2019A %>%
+  filter(amount <= 5400) %>%
+  ggplot(mapping = aes(x = amount)) +
+  geom_histogram(binwidth=500)
+```
+
+```{r}
+cooper_rcpts_2019A %>%
+  filter(amount <= 5400) %>%
+  ggplot(mapping = aes(x = amount)) +
+  geom_histogram(binwidth=10)
+```
+
+### Extra credit: Add a new layer called scale_x_continuous to make it a little bit easier to interpret these granular results
+
+```{r}
+cooper_rcpts_2019A %>%
+  filter(amount <= 5400) %>%
+  ggplot(mapping = aes(x = amount)) +
+  geom_histogram(binwidth=10) +
+  scale_x_continuous(breaks = seq(0, 5500, 500))
+```
+
+### From Cooper's perspective, what are "Small", "medium", "large" donations?
+```{r}
+cooper_rcpts_2019A %>%
+  filter(amount <= 5400) %>%
+  ggplot(mapping = aes(x = amount)) +
+  geom_histogram(bins = 3)
+```
+
+### Comparing number of donations by type.
+```{r}
+cooper_rcpts_2019A %>%
+  ggplot(mapping = aes(x=amount, fill=type)) +
+  geom_histogram(alpha=0.6, position = 'identity', binwidth = 100)
+```
+
+
+### By profession.
+This is what you should do, but it will cause choking. Why? Because there are too many professions. But notice that even the "choking" reveals an insight.
+```{r}
+cooper_rcpts_2019A %>%
+  filter(amount <= 5400) %>%
+  ggplot(mapping = aes(x=amount, fill=profession)) +
+  geom_histogram(alpha=0.6, position = 'identity', binwidth = 100)
+```
+
+
+### By state. Also not super useful
+```{r}
+cooper_rcpts_2019A %>%
+  filter(amount <= 5400) %>%
+  ggplot(mapping = aes(x=amount, fill=state)) +
+  geom_histogram(alpha=0.6, position = 'identity', binwidth = 100)
+```
+
+
+
+### Also with one numeric variable, density plot
+This shows you proportion, rather than raw count.
+```{r}
+cooper_rcpts_2019A %>%
+  filter(amount <= 5400) %>%
+  ggplot(mapping = aes(x = amount, fill = type)) +
+  geom_density()
+```
+
+### Zoom with coord_cartesian()
+```{r}
+cooper_rcpts_2019A %>%
+  filter(amount <= 5400) %>%
+  ggplot(mapping = aes(x = amount, fill = type)) +
+  geom_density() +
+  coord_cartesian(xlim=c(0,1000), ylim = c(0,.025))
+
+```
+
+
+### Extra Credit
+```{r}
+cooper_rcpts_2019A %>%
+  filter(amount <= 5400) %>%
+  ggplot(mapping = aes(x = amount)) +
+  geom_histogram(binwidth=500) +
+  scale_x_continuous(breaks = seq(0, 5500, 500))
+```
+
+
+## Two numberic values
+We don't really have this here. An example of this would be voter registration by precinct. So you would have the number of voters, etc. 
+
+
+
+## One categorical variable.
+This really only works with grouped. Check out the difference between these two bars that at first blush look the same, but really are different. 
+```{r}
+cooper_rcpts_2019A %>%
+  filter(state != "NC") %>%
+ggplot(aes(x=state, y=amount)) + 
+  geom_bar(stat = "identity", color = "black", fill="yellow") +
+  coord_flip()
+```
+
+```{r}
+cooper_rcpts_2019A %>%
+  filter(state != "NC") %>%
+  group_by(state) %>%
+  summarise(total = sum(amount)) %>%
+ggplot(aes(x=state, y=total)) + 
+  geom_bar(stat = "identity", color="black", fill="yellow") +
+  coord_flip()
+```
+
+An example with months ...
+```{r}
+cooper_rcpts_2019A %>%
+  group_by(month = month(date)) %>%
+  summarise(total = sum(amount)) %>%
+ggplot(aes(x=month, y=total)) + 
+  geom_bar(stat = "identity")
+```
+
+### Comparing one numeric value across multiple categorical variables
+These stacked bars let us look at both month _and_ type.
+```{r}
+cooper_rcpts_2019A %>%
+  group_by(month = month(date), type) %>%
+  summarise(total = sum(amount)) %>%
+ggplot(aes(x=month, y=total, fill = type)) + 
+  geom_bar(stat = "identity")
+```
+
+
+This is the same, but with side-by-side bars
+```{r}
+cooper_rcpts_2019A %>%
+  group_by(month = month(date), type) %>%
+  summarise(total = sum(amount)) %>%
+ggplot(aes(x=month, y=total, fill = type)) + 
+  geom_bar(stat = "identity", position="dodge")
+```
+
+###Stacked area graph
+
+```{r}
+cooper_rcpts_2019A %>%
+  group_by(state, month = month(date)) %>%
+  summarise(total = sum(amount)) %>% 
+  ggplot(aes(x=month, y=total, fill=state)) + 
+ geom_area()
+  
+```
+
+
+### Boxplot by month
+What does this show ? A ton of huge outliers every month.
+```{r}
+cooper_rcpts_2019A %>%
+  filter(amount <= 5400) %>%
+  # We use as.factor() to turn a continuous variable into a categorical variable.
+  ggplot(mapping = aes(x = as.factor(month(date)), y = amount)) +
+  geom_boxplot()
+
+```
+
+### Kind of like those crosstabs we built.
+
+```{r}
+cooper_rcpts_2019A %>%
+    group_by(type, month = month(date)) %>%
+  summarise(total = sum(amount)) %>% 
+  ggplot(mapping = aes(x = month, y = type)) +
+    geom_tile(mapping = aes(fill = total)) +
+    scale_fill_continuous(name="Donations", labels = dollar_format())
+```
+
+
+

@@ -1,0 +1,286 @@
+---
+title: "HW7: group_by and summarize"
+author: "FIRSTNAME LASTNAME"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+time: "`r format(Sys.time(), '%H:%M')`"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+##Instructions
+Complete this assignment in RStudio. Run all of the chunks, then Knit the markdown file to html. Upload that HTML file to the HW6 assignment on Sakai.
+
+###Load the tidyverse package(s)
+```{r}
+#install.packages("tidyverse")
+library(tidyverse)
+```
+
+
+###Load the 2018 election results 
+...because we need partisan contests for this example...
+```{r}
+temp <- tempfile()
+
+download.file("https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2018_11_06/results_pct_20181106.zip",temp)
+
+results2018 <- read_delim(unz(temp, "results_pct_20181106.txt"),
+                          "\t", 
+                          escape_double = FALSE,
+                          trim_ws = TRUE, 
+                          col_types = cols(
+                          `Election Date`  = col_date("%m/%d/%Y"),
+                          `Contest Group ID` = col_character(),
+                          `Choice Party` = col_character()
+                          )) %>%
+  clean_names() %>%
+#This next line deals with an issue I was having with "embedded nulls". I did try setting the locale inside read_delim, but it did not fix them problem. This line seems to do the trick... 
+mutate(choice_party = parse_character(choice_party, locale = locale(encoding = "ISO-8859-2")))
+
+#I used this line to determine the encoding of the file. 
+#guess_encoding("results_pct_20181106.txt", n_max = -1, threshold = 0.2)
+
+#results2018$`Choice Party`<- parse_character(results2018$`Choice Party`, locale = locale(encoding = "ISO-8859-2"))
+
+unlink(temp)
+```
+
+### Quick Review
+* We want to work only with real precincts.
+* We want to add a column called "early_votes" that is the number of votes _not_ received on election day.
+* We want to group so there is just one row per candidate.... but what if there are multiple candidates with the same name? 
+* We want to summarize the voting columns.
+```{r}
+results2018_bycand <- results2018 %>%
+  filter(real_precinct=="Y") %>%
+  mutate(early_votes = total_votes - election_day) %>%
+  group_by(choice, choice_party, contest_name) %>%
+  #I'll give you the next line because it shows you a little trick to make things easier
+  summarise_at(c("election_day", "one_stop","absentee_by_mail","provisional","total_votes", "early_votes"), sum) %>%
+  ungroup()
+
+#And, yes, that's right that you will see three lines of candidates with no names. And no votes. I did not take the time to figure out what is happening here, but would DEFINITELY need to understand this before doing real reporting on it. Suffice for now to say "Welcome to data in the real, messy world.
+  
+```
+
+
+
+```{r}
+ggplot(data = results2018_bycand) + 
+  geom_point(mapping = aes(x = early_votes, y = total_votes))
+```
+
+
+### Color by party
+
+```{r}
+ggplot(data = results2018_bycand) + 
+  geom_point(mapping = aes(x = early_votes, y = total_votes, color=choice_party))
+```
+
+Let's look at the relationship between early_votes and election_day votes, but also by total_votes
+
+```{r}
+ggplot(data = results2018_bycand) + 
+  geom_point(mapping = aes(x = early_votes, y = election_day, color=choice_party, size=total_votes))
+```
+
+
+### Change the geom
+```{r}
+ggplot(data = results2018_bycand) + 
+  geom_smooth(mapping = aes(x = early_votes, y = election_day))
+```
+
+###Let's use geom_line to show some other things
+```{r}
+ggplot(data = results2018_bycand) + 
+  geom_line(mapping = aes(x = early_votes, y = total_votes, color=choice_party))
+```
+
+
+
+```{r}
+ggplot(data = results2018_bycand) + 
+  geom_line(mapping = aes(x = early_votes, y = total_votes, linetype=choice_party))
+```
+
+### Don't show legend
+```{r}
+ggplot(data = results2018_bycand) + 
+  geom_line(mapping = aes(x = early_votes, y = total_votes, linetype=choice_party),
+            show.legend = FALSE
+            )
+```
+
+### Two geoms on same canvas.
+```{r}
+ggplot(data = results2018_bycand) + 
+  geom_point(mapping = aes(x = early_votes, y = total_votes, color=choice_party)) + 
+  geom_line(mapping = aes(x = early_votes, y = total_votes, linetype=choice_party),
+            show.legend = FALSE
+            )
+```
+
+
+### Set aesthetic mappings at the canvas level
+```{r}
+ggplot(data = results2018_bycand, mapping = aes(x = early_votes, y = total_votes, color=choice_party)) +
+  geom_point() + 
+  geom_line()
+```
+
+```{r}
+ggplot(data = results2018_bycand, mapping = aes(x = early_votes, y = total_votes)) +
+  geom_point(mapping=aes(color=choice_party)) + 
+  geom_smooth()
+```
+
+### Filter
+When you filter you change both what is SEEN and what is ANALYZED (So the line of best fit will change)
+```{r}
+ggplot(data = filter(results2018_bycand, early_votes > 0), mapping = aes(x = early_votes, y = total_votes)) +
+  geom_point(mapping=aes(color=choice_party)) + 
+  geom_smooth()
+```
+
+
+### Use geom_bar to show hopw many things in a category. 
+
+```{r}
+ggplot(data = voters_yancey) +
+  geom_bar(mapping = aes(x = party_cd))
+```
+
+
+### Party registration as a proportion
+```{r}
+ggplot(data = voters_yancey) +
+  geom_bar(mapping = aes(x = party_cd, y = ..prop.., group=1))
+# same shape, just different y-axis values. By the way, don't ask me why group=1. It also work with group=0 an group=9999. But removing the group argument makes every bar show that the proportion of Democrats is 100% of Democrats, and Republicans are 100% of Republicans, etc.)
+```
+
+
+### Can also make a bar graph based on numerical values (rather than a count of rows.)
+Note that this goes outside the aesthetic mapping
+And it's only really useful when you have summary data.
+```{r}
+ggplot(data = MLBpayrolls) +
+  geom_bar(mapping = aes(x = TEAM, y = Payroll.2016), stat="identity")
+
+#also, nevermind the ugly axes labels. We'll come to that later.
+
+```
+
+###Look at votes for candidates in the N.C. state House.
+```{r}
+ggplot(data = filter(results2018_bycand, str_detect(contest_name, "NC HOUSE"))) + 
+  stat_summary(
+    mapping = aes(x = choice_party, y = total_votes),
+    fun.ymin = min,
+    fun.ymax = max,
+    fun.y = median
+  )
+```
+
+### A more commonly used "geom"
+[More about boxplots.](https://flowingdata.com/2008/02/15/how-to-read-and-use-a-box-and-whisker-plot/)
+```{r}
+ggplot(data = filter(results2018_bycand, str_detect(contest_name, "NC HOUSE"))) + 
+  geom_boxplot(
+    mapping = aes(x = choice_party, y = total_votes)
+  )
+```
+
+
+### Geom violin
+```{r}
+ggplot(data = filter(results2018_bycand, str_detect(contest_name, "NC HOUSE"))) + 
+  geom_violin(
+    mapping = aes(x = choice_party, y = total_votes)
+  )
+```
+
+### Coloring bar charts
+It's fill, not color. Why? Just to be difficult, I think.
+```{r}
+#ggplot(data = voters_yancey) +
+#  geom_bar(mapping = aes(x = party_cd, color = party_cd))
+
+ggplot(data = voters_yancey) +
+  geom_bar(mapping = aes(x = party_cd, fill = party_cd))
+
+```
+
+
+### But that is a waste of cognitive load. The colors here don't add anything.
+Write a setence from this graph.
+```{r}
+#ggplot(data = voters_yancey) +
+#  geom_bar(mapping = aes(x = party_cd, color = party_cd))
+
+ggplot(data = voters_yancey) +
+  geom_bar(mapping = aes(x = party_cd, fill = gender_code))
+```
+
+### Tell the story another way.
+```{r}
+ggplot(data = voters_yancey) +
+  geom_bar(mapping = aes(x = gender_code, fill = party_cd))
+```
+
+### Sometimes easier to compare proportions
+Using position="fill"
+```{r}
+ggplot(data = voters_yancey) +
+  geom_bar(mapping = aes(x = party_cd, fill = gender_code), position="fill")
+```
+
+### Or side-by-side
+Using position="dodge"
+```{r}
+ggplot(data = voters_yancey) +
+  geom_bar(mapping = aes(x = party_cd, fill = gender_code), position="dodge")
+```
+
+### Yancey voters by age
+```{r}
+ggplot(data = voters_yancey) +
+  geom_histogram(mapping = aes(x = birth_age),binwidth = 5)
+```
+
+
+### Yancey voters bins instead of binwidth
+```{r}
+ggplot(data = voters_yancey) +
+  geom_histogram(mapping = aes(x = birth_age),bins = 4)
+```
+
+### Yancey voters bins instead of binwidth
+```{r}
+ggplot(data = voters_yancey) +
+  geom_density(mapping = aes(x = birth_age, fill = party_cd, alpha = .3 ))
+```
+
+
+
+### Coord Flip
+Remember when I said we would look at different ways to deal with the x-axis overlap. Here's one way. 
+```{r}
+ggplot(data = MLBpayrolls) +
+  geom_bar(mapping = aes(x = TEAM, y = Payroll.2016), stat="identity") +
+  coord_flip()
+```
+
+```{r}
+install.packages("tigris")
+library(packages)
+```
+
+```{r}
+
+```
+

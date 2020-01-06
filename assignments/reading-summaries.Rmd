@@ -1,0 +1,19 @@
+---
+title: "Reading Summaries"
+output:
+  html_document:
+    df_print: paged
+---
+
+
+On the dates where you have reading summaries due for homework, for _each_ bulleted reading you will write in a Word document:
+* three main points you took away from the readings. These should be simple, declarative sentences in your own words.
+* one question that you have about the readings -- something that isn’t clear or something you’d like to investigate further. Questions that begin with “how” or “why” work best.
+
+Example:
+
+* **Numbers in the Newsroom, Chapter 92** 
+    * Percentages greater than 100 are better expressed as ratios, such as "Four times as many… "
+    * The type of analysis you can do on data depends on where it is on the “data ladder."
+    * Jacob Harris spotted six different examples of data analysis errors in BuzzFeed’s story about politics and pornography.
+    * All of the readings mentioned the difference between using median and mean, but I’m still not exactly sure when you use each. How do you know when to use median and when to use mean?

@@ -1,0 +1,69 @@
+---
+title: "Extra Credit: How I Got the Story"
+  html_document:
+    theme: cosmo
+---
+
+# Instructions
+
+1. Pick one story from the following sources:
+    a. https://www.ire.org/publications/extra-extra
+    b. https://data.fivethirtyeight.com/
+    c. https://www.propublica.org/newsapps/
+    d. https://www.texastribune.org/series/news-apps-graphics-databases/
+    e. https://twitter.com/rtburg/lists/data-journalists
+2. Summarize & critique the story
+3. Interview -- in phone or in person -- one person whose byline appears on the story.
+4. Answer the questions below in 750 to 2,000 words
+
+The goal of this assignment is to help you begin to look at data reporting projects with a critical and creative eye so that you can use them as inspirations for your own work. The end product of ambitious journalism only shows a fraction of the work that went into creating it, and talking with real people about their work both makes this kind of reporting more accessible and helps you see what needed to happen behind the scenes.
+
+At the end of the assignment you should be able to describe pretty clearly what it would take to do a similar project with an understanding of the elements of work that were unique, which could be replicated and what pitfalls you would need to avoid.
+
+The assignment should be written for an audience of fellow journalists, similar to the style of articles you find on poynter.org, CJR.org, or Niemanlab.org or the IRE Journal.
+
+
+## Story summary
+
+With brevity and clarity, describe the basic news elements of the story and what makes the story important or interesting to you.
+
+
+## Story critique
+
+* What about the story surprised you?
+* How did the reporter use data to explain a fact that could not be observed?
+* How did the reporter use anecdotes and observation?
+* Who were the human sources in the story, both named and unnamed?
+* Is it clear how the reporter came to any conclusions they drew? Does the story make assertions for which you don’t see sufficient evidence?
+* How does the reporter convey the news value of magnitude? How are numbers and analogies both used to do that?
+* Does the reporter use data to allow the reader to “dig into” the story in any way? How can the data be searched or sorted? Is that useful?
+* How are visual elements used? Do they repeat or augment the text? (Vice versa if visual elements are the main part of the story.)
+* Using readings you’ve done for class, where -- if at all -- does the story violate or conform to rules or best practices described in any of the readings? 
+
+## Interview
+
+* Where did the story idea come from?
+* How long between initial idea and publication? How many hours did the interview subject work on the story over that time?
+* Who else worked on the story? How many hours did they spend?
+* What was the process of pitching an editor on the idea?
+* Did the reporter have an initial hypothesis? What was it?
+* Did the story angle or approach change over time? If so, how?
+* What documents or data did the reporter use in the reporting process? Describe the process of acquiring them? How (if at all) did information gleaned from those documents or data appear in the final story?
+* What technical skills did the reporter use to clean and analyze the data?
+* If the report includes a data visualization or news app, what technical skills and tools did the reporter use to build them?
+* Who did the reporter interview for the story? At what point in the process did the interviews take place? How -- if at all -- did information obtained from the interviews appear in the story?
+* How did the reporter make sure they got their facts right?
+* What did they learn from the process? What advice would they have for a reporter trying to do a similar story?
+* What was the impact of the story?
+
+## Grading Rubric
+
+A = Answers all or nearly all of the questions here and adds significant additional insight about a story of national impact.
+
+B = Answers nearly all of the questions here on a story of national significance or *all* of the questions here on a story of state or local impact.
+
+C = Answers all of the questions on a story of little impact or leaves significant questions unanswered.
+
+D = failed to do an live interview with reporter and/or story did not use data.
+
+F = No interview, no critique, story did not use data.

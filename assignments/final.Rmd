@@ -1,0 +1,99 @@
+---
+title: "Final Project"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+The final assignment gives you a chance to apply all the things you learned in the course. We will begin working on the assignment around the 11th class of the semester. The project will build over the following eight weeks, culminating in a story due on the date of the final.
+
+It will be an original explanaotry story driven by questions you have while looking at political campaign and other related data. All together the work you do toward your final project will be 40% of your course grade.
+
+
+|Component|Percentage of your course grade|Due date
+|----------|------------------------|--------------
+|Data analysis|20%|March 30
+|Draft|15%|April 22
+|Final|5%| Date of final exam
+
+
+The final story will be about 2,000 written words and it will have have these sections:
+
+* **What's news?** This brief paragraph will describe the main finding of your analysis. Here is a [guide to finding the news in data](http://multimedia.jmc.uiowa.edu/fall2012/files/2012/08/rt-m2-tipsheet.pdf).
+
+* **So what?** This section can be one or more paragraphs. It describes more in depth why the reader should care about your main finding. It may explain more in depth about what is normal and in what ways your main finding is unusual, or how it might help understand political campaigns in North Carolina.
+In this and other sections, you will use human sources to help put the data into context as well as provide possible explanations of the possible reasons and causes of your insight. Direct quotes are not required, but talking to human sources is mandatory. 
+
+* **Compared to what?** This section examines your main finding in comparison to other data points. The best stories will make comparisons across more than one of time, place or category.
+
+* **What else? or What next?** The final section of the story looks ahead at how your insight might affect future political campaigning, or what might cause your data points to change in the future. In this section you will highlight your "known unkowns" and maybe foreshadow additional reporting that could be done by you or someone else looking at the data.
+
+
+### Final Deliverables
+Your final story will be one of several elements uploaded to Github. In the last week of class you will learn how to publish your work on Github. Your final Github "repository" will include:
+
+* Written analysis uploaded as a PDF or HTML file
+* A Readme file explaining your work
+* An .Rmd file with your R code written in such a way that anyone else could just hit run and replicate your analysis.
+* An HTML version of the .Rmd file
+* Any OpenRefine scripts you used for your final analysis
+* Any .csv files of data that you manipulated before loading into R.
+
+
+
+### Detailed Work Plan
+Starting in Week 7, we will begin working with campaign finance data. We will be working with a certain set of data in class, but you will be given another contest to analyze for your final project. You will eventually be paired with another student doing the other candidate in the race. 
+
+From Feb. 17 - March 25 we will learn the skills needed to complete the data analysis that is due March 30. 
+
+From April 6 - 22 you will be focused on adding the how, why, so what to your story by doing additional analysis.
+
+From April 3 - April 22 you will work on incorporating your analysis into a draft of your final written story. 
+
+From April 25  until the date of your final you will use my feedback on your draft to put the finishing touches on your final project. 
+
+### Grading of final project
+The final project will be worth 20 points, allocated as follows:
+
+* Clear lead that summarizes main point: 1-4 points
+* Overall news value. Clearly explains So What?: 1-4 points
+* Highlights or explains main points by making comparisons: 1-4 points
+* Includes context from experts or witnesses: 1-4 points
+* Writing organization. One idea per paragraph. Free of passive voice. Correct word usage. Avoids unneccesarily long sentences. 1-4 points.
+
+You may also have points deducated, as follows:
+
+* Spelling and grammar errors, each -1 point
+* Each fact error, -5 points.
+
+* Missing or incomplete Readme file (-1 to -4 points)
+* Missing or incomplete .Rmd file  (-1 to -4 points)
+* Missing HTML version of the .Rmd file (-1)
+* Missing OpenRefine scripts you used for your final analysis, if applicable (-1)
+* Missing .csv files of data that you manipulated before loading into R, if applicable (-1)
+
+And, you can earn some extra credit points:
+
+* Include a publication quality data visualization created in R: +1-4 points
+* Use data that had to be requested or scraped: +1-4 points
+*Extra credit: Uses data that was not give to you in class, and joined to make a newsworthy comparison +2-4 points
+
+#### Grade breaks
+A: 17-20 points
+
+B: 12-16 points
+
+C: 9-11 points
+
+D: 5-8 points
+
+F: < 5 points
+
+
+
+
+
+
+
+

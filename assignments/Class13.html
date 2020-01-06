@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="FIRSTNAME LASTNAME" />
+
+<meta name="date" content="2020-01-06" />
+
+<title>Class 13: Visualizing Campaign Finance data</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Class 13: Visualizing Campaign Finance data</h1>
+<h4 class="author">FIRSTNAME LASTNAME</h4>
+<h4 class="date">January 06, 2020</h4>
+
+</div>
+
+
+<p>##Instructions Today in class we will begin exploring the campaign finance reports of Gov. Roy Cooper. For homework —- in preparation for your final report – you will do the same analysis for your candidate.</p>
+<p>###Load the tidyverse package(s)</p>
+<pre class="r"><code>#install.packages(&quot;tidyverse&quot;)
+library(tidyverse)</code></pre>
+<p>###Load the data</p>
+<pre class="r"><code>url &lt;- &quot;https://cf.ncsbe.gov/CFOrgLkup/ExportDetailResults/?ReportID=168216&amp;Type=REC&amp;Title=Cooper%20for%20North%20Carolina%20-%202019%20Mid%20Year%20Semi-Annual&quot;
+
+#read_csv() does not do a great job here guessing the correct col_types, so we have to define them explicitly.
+
+#cooper_rcpts_2019A &lt;- read_csv(url, 
+#    col_types = cols(
+#      `Account Abbr` = col_character(), 
+#        City = col_character(), 
+#      `Country Name` = col_character(), 
+#        Date = col_date(format = &quot;%m/%d/%Y&quot;), 
+#        Description = col_character(), 
+#      `Employers Name` = col_character(), 
+#        `Full Zip` = col_character(), 
+#      `Outside US Postal Code` = col_character(), 
+#        Profession = col_character(), 
+#      Purpose = col_character(), 
+#        State = col_character(), 
+#      `Street 1` = col_character(), 
+#        `Street 2` = col_character()),
+#    skip = 1)
+
+#Finally, we should rename the columns to remove spaces and generally promote brevity.
+
+#names(cooper_rcpts_2019A) &lt;- c(&quot;date&quot;,&quot;prior&quot;,&quot;donor&quot;,&quot;street1&quot;,&quot;street2&quot;,&quot;city&quot;,&quot;state&quot;,&quot;zip&quot;,&quot;country&quot;,&quot;postal&quot;,&quot;profession&quot;,&quot;employer&quot;,&quot;purpose&quot;,&quot;type&quot;,&quot;account&quot;,&quot;payment_form&quot;,&quot;description&quot;,&quot;amount&quot;,&quot;sum_to_date&quot;)</code></pre>
+<p>#One Numeric Variable</p>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  ggplot(mapping = aes(x = amount)) +
+  geom_histogram()</code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  ggplot(mapping = aes(x = amount)) +
+  geom_histogram(bins = 2)</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  ggplot(mapping = aes(x = amount)) +
+  geom_histogram(bins = 8)</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  filter(amount &gt; 5400)</code></pre>
+<pre><code>## # A tibble: 6 x 19
+##   date       prior donor street1 street2 city  state zip   country postal
+##   &lt;date&gt;     &lt;lgl&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+## 1 2019-06-30 NA    NC D… 220 HI… &lt;NA&gt;    RALE… NC    27603 United… &lt;NA&gt;  
+## 2 2019-06-30 NA    NC D… 434 FA… &lt;NA&gt;    RALE… NC    27601 United… &lt;NA&gt;  
+## 3 2019-06-30 NA    NC D… 434 FA… &lt;NA&gt;    RALE… NC    27601 United… &lt;NA&gt;  
+## 4 2019-06-30 NA    NC D… 434 FA… &lt;NA&gt;    RALE… NC    27601 United… &lt;NA&gt;  
+## 5 2019-06-30 NA    NC D… 434 FA… &lt;NA&gt;    RALE… NC    27601 United… &lt;NA&gt;  
+## 6 2019-04-30 NA    NORT… 220 HI… &lt;NA&gt;    RALE… NC    27603 United… &lt;NA&gt;  
+## # … with 9 more variables: profession &lt;chr&gt;, employer &lt;chr&gt;, purpose &lt;chr&gt;,
+## #   type &lt;chr&gt;, account &lt;chr&gt;, payment_form &lt;chr&gt;, description &lt;chr&gt;,
+## #   amount &lt;dbl&gt;, sum_to_date &lt;dbl&gt;</code></pre>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  filter(amount &lt;= 5400) %&gt;%
+  ggplot(mapping = aes(x = amount)) +
+  geom_histogram()</code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  filter(amount &lt;= 5400) %&gt;%
+  ggplot(mapping = aes(x = amount)) +
+  geom_histogram(binwidth=500)</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  filter(amount &lt;= 5400) %&gt;%
+  ggplot(mapping = aes(x = amount)) +
+  geom_histogram(binwidth=10)</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<div id="extra-credit-add-a-new-layer-called-scale_x_continuous-to-make-it-a-little-bit-easier-to-interpret-these-granular-results" class="section level3">
+<h3>Extra credit: Add a new layer called scale_x_continuous to make it a little bit easier to interpret these granular results</h3>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  filter(amount &lt;= 5400) %&gt;%
+  ggplot(mapping = aes(x = amount)) +
+  geom_histogram(binwidth=10) +
+  scale_x_continuous(breaks = seq(0, 5500, 500))</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+<div id="from-coopers-perspective-what-are-small-medium-large-donations" class="section level3">
+<h3>From Cooper’s perspective, what are “Small”, “medium”, “large” donations?</h3>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  filter(amount &lt;= 5400) %&gt;%
+  ggplot(mapping = aes(x = amount)) +
+  geom_histogram(bins = 3)</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+</div>
+<div id="comparing-number-of-donations-by-type." class="section level3">
+<h3>Comparing number of donations by type.</h3>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  ggplot(mapping = aes(x=amount, fill=type)) +
+  geom_histogram(alpha=0.6, position = &#39;identity&#39;, binwidth = 100)</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+</div>
+<div id="by-profession." class="section level3">
+<h3>By profession.</h3>
+<p>This is what you should do, but it will cause choking. Why? Because there are too many professions. But notice that even the “choking” reveals an insight.</p>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  filter(amount &lt;= 5400) %&gt;%
+  ggplot(mapping = aes(x=amount, fill=profession)) +
+  geom_histogram(alpha=0.6, position = &#39;identity&#39;, binwidth = 100)</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+</div>
+<div id="by-state.-also-not-super-useful" class="section level3">
+<h3>By state. Also not super useful</h3>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  filter(amount &lt;= 5400) %&gt;%
+  ggplot(mapping = aes(x=amount, fill=state)) +
+  geom_histogram(alpha=0.6, position = &#39;identity&#39;, binwidth = 100)</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+</div>
+<div id="also-with-one-numeric-variable-density-plot" class="section level3">
+<h3>Also with one numeric variable, density plot</h3>
+<p>This shows you proportion, rather than raw count.</p>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  filter(amount &lt;= 5400) %&gt;%
+  ggplot(mapping = aes(x = amount, fill = type)) +
+  geom_density()</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+</div>
+<div id="zoom-with-coord_cartesian" class="section level3">
+<h3>Zoom with coord_cartesian()</h3>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  filter(amount &lt;= 5400) %&gt;%
+  ggplot(mapping = aes(x = amount, fill = type)) +
+  geom_density() +
+  coord_cartesian(xlim=c(0,1000), ylim = c(0,.025))</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+</div>
+<div id="extra-credit" class="section level3">
+<h3>Extra Credit</h3>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  filter(amount &lt;= 5400) %&gt;%
+  ggplot(mapping = aes(x = amount)) +
+  geom_histogram(binwidth=500) +
+  scale_x_continuous(breaks = seq(0, 5500, 500))</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+</div>
+<div id="two-numberic-values" class="section level2">
+<h2>Two numberic values</h2>
+<p>We don’t really have this here. An example of this would be voter registration by precinct. So you would have the number of voters, etc.</p>
+</div>
+<div id="one-categorical-variable." class="section level2">
+<h2>One categorical variable.</h2>
+<p>This really only works with grouped. Check out the difference between these two bars that at first blush look the same, but really are different.</p>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  filter(state != &quot;NC&quot;) %&gt;%
+ggplot(aes(x=state, y=amount)) + 
+  geom_bar(stat = &quot;identity&quot;, color = &quot;black&quot;, fill=&quot;yellow&quot;) +
+  coord_flip()</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  filter(state != &quot;NC&quot;) %&gt;%
+  group_by(state) %&gt;%
+  summarise(total = sum(amount)) %&gt;%
+ggplot(aes(x=state, y=total)) + 
+  geom_bar(stat = &quot;identity&quot;, color=&quot;black&quot;, fill=&quot;yellow&quot;) +
+  coord_flip()</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p>An example with months …</p>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  group_by(month = month(date)) %&gt;%
+  summarise(total = sum(amount)) %&gt;%
+ggplot(aes(x=month, y=total)) + 
+  geom_bar(stat = &quot;identity&quot;)</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<div id="comparing-one-numeric-value-across-multiple-categorical-variables" class="section level3">
+<h3>Comparing one numeric value across multiple categorical variables</h3>
+<p>These stacked bars let us look at both month <em>and</em> type.</p>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  group_by(month = month(date), type) %&gt;%
+  summarise(total = sum(amount)) %&gt;%
+ggplot(aes(x=month, y=total, fill = type)) + 
+  geom_bar(stat = &quot;identity&quot;)</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p>This is the same, but with side-by-side bars</p>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  group_by(month = month(date), type) %&gt;%
+  summarise(total = sum(amount)) %&gt;%
+ggplot(aes(x=month, y=total, fill = type)) + 
+  geom_bar(stat = &quot;identity&quot;, position=&quot;dodge&quot;)</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p>###Stacked area graph</p>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  group_by(state, month = month(date)) %&gt;%
+  summarise(total = sum(amount)) %&gt;% 
+  ggplot(aes(x=month, y=total, fill=state)) + 
+ geom_area()</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+</div>
+<div id="boxplot-by-month" class="section level3">
+<h3>Boxplot by month</h3>
+<p>What does this show ? A ton of huge outliers every month.</p>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  filter(amount &lt;= 5400) %&gt;%
+  # We use as.factor() to turn a continuous variable into a categorical variable.
+  ggplot(mapping = aes(x = as.factor(month(date)), y = amount)) +
+  geom_boxplot()</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+</div>
+<div id="kind-of-like-those-crosstabs-we-built." class="section level3">
+<h3>Kind of like those crosstabs we built.</h3>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+    group_by(type, month = month(date)) %&gt;%
+  summarise(total = sum(amount)) %&gt;% 
+  ggplot(mapping = aes(x = month, y = type)) +
+    geom_tile(mapping = aes(fill = total)) +
+    scale_fill_continuous(name=&quot;Donations&quot;, labels = dollar_format())</code></pre>
+<p><img src="Class13_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

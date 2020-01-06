@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="FIRSTNAME LASTNAME" />
+
+<meta name="date" content="2020-01-06" />
+
+<title>Class 13: Visualizing Campaign Finance data</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Class 13: Visualizing Campaign Finance data</h1>
+<h4 class="author">FIRSTNAME LASTNAME</h4>
+<h4 class="date">January 06, 2020</h4>
+
+</div>
+
+
+<p>##Instructions Today in class we will begin dealing with messy text data – names, professions and employers in the campaign finance data.</p>
+<p>###Load the tidyverse package(s) Also, explicitly load stringr package. And install <em>and</em> load htmlwidgets package, which is a dependentcy of a lot of the coolest things in stringr.</p>
+<pre class="r"><code>#install.packages(&quot;tidyverse&quot;)
+library(tidyverse)
+library(stringr)
+#install.packages(&quot;htmlwidgets&quot;)
+library(htmlwidgets)</code></pre>
+<p>###Load the data</p>
+<pre class="r"><code>#url &lt;- &quot;https://cf.ncsbe.gov/CFOrgLkup/ExportDetailResults/?ReportID=168216&amp;Type=REC&amp;Title=Cooper%20for%20North%20Carolina%20-%202019%20Mid%20Year%20Semi-Annual&quot;
+
+#read_csv() does not do a great job here guessing the correct col_types, so we have to define them explicitly.
+
+#cooper_rcpts_2019A &lt;- read_csv(url, 
+#    col_types = cols(
+#      `Account Abbr` = col_character(), 
+#        City = col_character(), 
+#      `Country Name` = col_character(), 
+#        Date = col_date(format = &quot;%m/%d/%Y&quot;), 
+#        Description = col_character(), 
+#      `Employers Name` = col_character(), 
+#        `Full Zip` = col_character(), 
+#      `Outside US Postal Code` = col_character(), 
+#        Profession = col_character(), 
+#      Purpose = col_character(), 
+#        State = col_character(), 
+#      `Street 1` = col_character(), 
+#        `Street 2` = col_character()),
+#    skip = 1)
+
+#Finally, we should rename the columns to remove spaces and generally promote brevity.
+
+#names(cooper_rcpts_2019A) &lt;- c(&quot;date&quot;,&quot;prior&quot;,&quot;donor&quot;,&quot;street1&quot;,&quot;street2&quot;,&quot;city&quot;,&quot;state&quot;,&quot;zip&quot;,&quot;country&quot;,&quot;postal&quot;,&quot;profession&quot;,&quot;employer&quot;,&quot;purpose&quot;,&quot;type&quot;,&quot;account&quot;,&quot;payment_form&quot;,&quot;description&quot;,&quot;amount&quot;,&quot;sum_to_date&quot;)</code></pre>
+<p>If you wanted to find donors who work for the Universit of North Carolina at Chapel Hill.</p>
+<p>Find all the university employers</p>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  filter(str_detect(employer, &quot;UNIVERSITY&quot;))</code></pre>
+<pre><code>## # A tibble: 224 x 19
+##    date       prior donor street1 street2 city  state zip   country postal
+##    &lt;date&gt;     &lt;lgl&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+##  1 2019-02-20 NA    GEOR… PO BOX… &lt;NA&gt;    CHAP… NC    27516 United… &lt;NA&gt;  
+##  2 2019-04-30 NA    NEIL… 14 SUM… &lt;NA&gt;    FAIR… VT    05454 United… &lt;NA&gt;  
+##  3 2019-06-07 NA    NEIL… 14 SUM… &lt;NA&gt;    FAIR… VT    05454 United… &lt;NA&gt;  
+##  4 2019-06-12 NA    NEIL… 14 SUM… &lt;NA&gt;    FAIR… VT    05454 United… &lt;NA&gt;  
+##  5 2019-05-03 NA    JAME… 2813 S… &lt;NA&gt;    FAYE… NC    28303 United… &lt;NA&gt;  
+##  6 2019-01-16 NA    BRIA… 610 AR… &lt;NA&gt;    DURH… NC    27701 United… &lt;NA&gt;  
+##  7 2019-03-06 NA    EDWA… 1 WYND… &lt;NA&gt;    DURH… NC    27705 United… &lt;NA&gt;  
+##  8 2019-05-26 NA    SARA… 1229 W… &lt;NA&gt;    WINS… NC    27101 United… &lt;NA&gt;  
+##  9 2019-01-02 NA    LAWR… 1010 H… &lt;NA&gt;    DURH… NC    27707 United… &lt;NA&gt;  
+## 10 2019-02-02 NA    LAWR… 1010 H… &lt;NA&gt;    DURH… NC    27707 United… &lt;NA&gt;  
+## # … with 214 more rows, and 9 more variables: profession &lt;chr&gt;,
+## #   employer &lt;chr&gt;, purpose &lt;chr&gt;, type &lt;chr&gt;, account &lt;chr&gt;,
+## #   payment_form &lt;chr&gt;, description &lt;chr&gt;, amount &lt;dbl&gt;, sum_to_date &lt;dbl&gt;</code></pre>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  filter(str_detect(employer, &quot;UNC&quot;))</code></pre>
+<pre><code>## # A tibble: 156 x 19
+##    date       prior donor street1 street2 city  state zip   country postal
+##    &lt;date&gt;     &lt;lgl&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+##  1 2019-02-06 NA    STAN… 201 PA… &lt;NA&gt;    CHAP… NC    27516 United… &lt;NA&gt;  
+##  2 2019-05-02 NA    STAN… 201 PA… &lt;NA&gt;    CHAP… NC    27516 United… &lt;NA&gt;  
+##  3 2019-04-30 NA    WAHE… 100 HE… &lt;NA&gt;    GOLD… NC    27530 United… &lt;NA&gt;  
+##  4 2019-04-30 NA    JAME… 1212 O… &lt;NA&gt;    GREE… NC    27408 United… &lt;NA&gt;  
+##  5 2019-05-17 NA    NADI… 13 SUR… &lt;NA&gt;    DURH… NC    27707 United… &lt;NA&gt;  
+##  6 2019-02-04 NA    EVAN… 1528 P… &lt;NA&gt;    DURH… NC    27705 United… &lt;NA&gt;  
+##  7 2019-05-29 NA    FLOR… 305 E … &lt;NA&gt;    CARR… NC    27510 United… &lt;NA&gt;  
+##  8 2019-04-12 NA    CARE… 202 CA… &lt;NA&gt;    CHAP… NC    27516 United… &lt;NA&gt;  
+##  9 2019-03-10 NA    DANI… 210 BR… &lt;NA&gt;    WILM… NC    28409 United… &lt;NA&gt;  
+## 10 2019-06-27 NA    DENI… 2506 S… &lt;NA&gt;    GREE… NC    27403 United… &lt;NA&gt;  
+## # … with 146 more rows, and 9 more variables: profession &lt;chr&gt;,
+## #   employer &lt;chr&gt;, purpose &lt;chr&gt;, type &lt;chr&gt;, account &lt;chr&gt;,
+## #   payment_form &lt;chr&gt;, description &lt;chr&gt;, amount &lt;dbl&gt;, sum_to_date &lt;dbl&gt;</code></pre>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  filter(str_detect(employer, &quot;U/. OF&quot;))</code></pre>
+<pre><code>## # A tibble: 0 x 19
+## # … with 19 variables: date &lt;date&gt;, prior &lt;lgl&gt;, donor &lt;chr&gt;, street1 &lt;chr&gt;,
+## #   street2 &lt;chr&gt;, city &lt;chr&gt;, state &lt;chr&gt;, zip &lt;chr&gt;, country &lt;chr&gt;,
+## #   postal &lt;chr&gt;, profession &lt;chr&gt;, employer &lt;chr&gt;, purpose &lt;chr&gt;, type &lt;chr&gt;,
+## #   account &lt;chr&gt;, payment_form &lt;chr&gt;, description &lt;chr&gt;, amount &lt;dbl&gt;,
+## #   sum_to_date &lt;dbl&gt;</code></pre>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  filter(str_detect(employer, &quot;UNC&quot;) | str_detect(employer, &quot;UNIVERSITY&quot;) | str_detect(employer, &quot;U/. OF&quot;) )</code></pre>
+<pre><code>## # A tibble: 380 x 19
+##    date       prior donor street1 street2 city  state zip   country postal
+##    &lt;date&gt;     &lt;lgl&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+##  1 2019-02-20 NA    GEOR… PO BOX… &lt;NA&gt;    CHAP… NC    27516 United… &lt;NA&gt;  
+##  2 2019-04-30 NA    NEIL… 14 SUM… &lt;NA&gt;    FAIR… VT    05454 United… &lt;NA&gt;  
+##  3 2019-06-07 NA    NEIL… 14 SUM… &lt;NA&gt;    FAIR… VT    05454 United… &lt;NA&gt;  
+##  4 2019-06-12 NA    NEIL… 14 SUM… &lt;NA&gt;    FAIR… VT    05454 United… &lt;NA&gt;  
+##  5 2019-02-06 NA    STAN… 201 PA… &lt;NA&gt;    CHAP… NC    27516 United… &lt;NA&gt;  
+##  6 2019-05-02 NA    STAN… 201 PA… &lt;NA&gt;    CHAP… NC    27516 United… &lt;NA&gt;  
+##  7 2019-04-30 NA    WAHE… 100 HE… &lt;NA&gt;    GOLD… NC    27530 United… &lt;NA&gt;  
+##  8 2019-04-30 NA    JAME… 1212 O… &lt;NA&gt;    GREE… NC    27408 United… &lt;NA&gt;  
+##  9 2019-05-03 NA    JAME… 2813 S… &lt;NA&gt;    FAYE… NC    28303 United… &lt;NA&gt;  
+## 10 2019-05-17 NA    NADI… 13 SUR… &lt;NA&gt;    DURH… NC    27707 United… &lt;NA&gt;  
+## # … with 370 more rows, and 9 more variables: profession &lt;chr&gt;,
+## #   employer &lt;chr&gt;, purpose &lt;chr&gt;, type &lt;chr&gt;, account &lt;chr&gt;,
+## #   payment_form &lt;chr&gt;, description &lt;chr&gt;, amount &lt;dbl&gt;, sum_to_date &lt;dbl&gt;</code></pre>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  filter(str_detect(employer, &quot;^UNC&quot;) | str_detect(employer, &quot;UNIVERSITY&quot;) | str_detect(employer, &quot;U/. OF&quot;) | str_detect(profession, &quot;PROF&quot;))</code></pre>
+<pre><code>## # A tibble: 477 x 19
+##    date       prior donor street1 street2 city  state zip   country postal
+##    &lt;date&gt;     &lt;lgl&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+##  1 2019-02-20 NA    GEOR… PO BOX… &lt;NA&gt;    CHAP… NC    27516 United… &lt;NA&gt;  
+##  2 2019-04-30 NA    NEIL… 14 SUM… &lt;NA&gt;    FAIR… VT    05454 United… &lt;NA&gt;  
+##  3 2019-06-07 NA    NEIL… 14 SUM… &lt;NA&gt;    FAIR… VT    05454 United… &lt;NA&gt;  
+##  4 2019-06-12 NA    NEIL… 14 SUM… &lt;NA&gt;    FAIR… VT    05454 United… &lt;NA&gt;  
+##  5 2019-02-06 NA    STAN… 201 PA… &lt;NA&gt;    CHAP… NC    27516 United… &lt;NA&gt;  
+##  6 2019-05-02 NA    STAN… 201 PA… &lt;NA&gt;    CHAP… NC    27516 United… &lt;NA&gt;  
+##  7 2019-04-30 NA    WAHE… 100 HE… &lt;NA&gt;    GOLD… NC    27530 United… &lt;NA&gt;  
+##  8 2019-04-30 NA    JAME… 1212 O… &lt;NA&gt;    GREE… NC    27408 United… &lt;NA&gt;  
+##  9 2019-05-03 NA    JAME… 2813 S… &lt;NA&gt;    FAYE… NC    28303 United… &lt;NA&gt;  
+## 10 2019-05-17 NA    NADI… 13 SUR… &lt;NA&gt;    DURH… NC    27707 United… &lt;NA&gt;  
+## # … with 467 more rows, and 9 more variables: profession &lt;chr&gt;,
+## #   employer &lt;chr&gt;, purpose &lt;chr&gt;, type &lt;chr&gt;, account &lt;chr&gt;,
+## #   payment_form &lt;chr&gt;, description &lt;chr&gt;, amount &lt;dbl&gt;, sum_to_date &lt;dbl&gt;</code></pre>
+<p>####UGH. How do you make sure UNC doesn’t match BUNCOME. FIXED.</p>
+<pre class="r"><code>cooper_rcpts_2019A %&gt;%
+  filter(str_detect(profession, &quot;PROF&quot;))</code></pre>
+<pre><code>## # A tibble: 268 x 19
+##    date       prior donor street1 street2 city  state zip   country postal
+##    &lt;date&gt;     &lt;lgl&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+##  1 2019-02-20 NA    GEOR… PO BOX… &lt;NA&gt;    CHAP… NC    27516 United… &lt;NA&gt;  
+##  2 2019-02-06 NA    STAN… 201 PA… &lt;NA&gt;    CHAP… NC    27516 United… &lt;NA&gt;  
+##  3 2019-05-02 NA    STAN… 201 PA… &lt;NA&gt;    CHAP… NC    27516 United… &lt;NA&gt;  
+##  4 2019-04-30 NA    JAME… 1212 O… &lt;NA&gt;    GREE… NC    27408 United… &lt;NA&gt;  
+##  5 2019-05-29 NA    FLOR… 305 E … &lt;NA&gt;    CARR… NC    27510 United… &lt;NA&gt;  
+##  6 2019-03-10 NA    DANI… 210 BR… &lt;NA&gt;    WILM… NC    28409 United… &lt;NA&gt;  
+##  7 2019-06-27 NA    DENI… 2506 S… &lt;NA&gt;    GREE… NC    27403 United… &lt;NA&gt;  
+##  8 2019-05-26 NA    SARA… 1229 W… &lt;NA&gt;    WINS… NC    27101 United… &lt;NA&gt;  
+##  9 2019-04-16 NA    GAIL… 2718 C… &lt;NA&gt;    CHAR… NC    28226 United… &lt;NA&gt;  
+## 10 2019-01-02 NA    LAWR… 1010 H… &lt;NA&gt;    DURH… NC    27707 United… &lt;NA&gt;  
+## # … with 258 more rows, and 9 more variables: profession &lt;chr&gt;,
+## #   employer &lt;chr&gt;, purpose &lt;chr&gt;, type &lt;chr&gt;, account &lt;chr&gt;,
+## #   payment_form &lt;chr&gt;, description &lt;chr&gt;, amount &lt;dbl&gt;, sum_to_date &lt;dbl&gt;</code></pre>
+<div id="just-professors" class="section level3">
+<h3>JUST PROFESSORS</h3>
+</div>
+<div id="anyone-who-works-at-a-university" class="section level3">
+<h3>ANYONE WHO WORKS AT A UNIVERSITY</h3>
+</div>
+<div id="including-retired-professors" class="section level3">
+<h3>INCLUDING RETIRED PROFESSORS</h3>
+<p>###In vhis, create a new column that just stories whether it was a general election or not.</p>
+</div>
+<div id="replace-unc-with-university-of-north-carolina-in-a-new-column-called-newemp.-also-note-why-this-doesnt-really-work." class="section level3">
+<h3>Replace “UNC” with “UNIVERSITY OF NORTH CAROLINA” in a new column called NewEmp. (Also, note why this doesn’t really work.)</h3>
+<pre class="r"><code>coop_new &lt;- cooper_rcpts_2019A %&gt;%
+  mutate(NewEmp = str_replace(employer, &quot;^UNC&quot;, &quot;UNIVERSITY OF NORTH CAROLINA&quot;))</code></pre>
+<pre class="r"><code>coop_new %&gt;%
+  filter(str_detect(employer, &quot;^UNC&quot;) )</code></pre>
+<pre><code>## # A tibble: 136 x 20
+##    date       prior donor street1 street2 city  state zip   country postal
+##    &lt;date&gt;     &lt;lgl&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+##  1 2019-02-06 NA    STAN… 201 PA… &lt;NA&gt;    CHAP… NC    27516 United… &lt;NA&gt;  
+##  2 2019-05-02 NA    STAN… 201 PA… &lt;NA&gt;    CHAP… NC    27516 United… &lt;NA&gt;  
+##  3 2019-04-30 NA    WAHE… 100 HE… &lt;NA&gt;    GOLD… NC    27530 United… &lt;NA&gt;  
+##  4 2019-04-30 NA    JAME… 1212 O… &lt;NA&gt;    GREE… NC    27408 United… &lt;NA&gt;  
+##  5 2019-05-17 NA    NADI… 13 SUR… &lt;NA&gt;    DURH… NC    27707 United… &lt;NA&gt;  
+##  6 2019-02-04 NA    EVAN… 1528 P… &lt;NA&gt;    DURH… NC    27705 United… &lt;NA&gt;  
+##  7 2019-05-29 NA    FLOR… 305 E … &lt;NA&gt;    CARR… NC    27510 United… &lt;NA&gt;  
+##  8 2019-04-12 NA    CARE… 202 CA… &lt;NA&gt;    CHAP… NC    27516 United… &lt;NA&gt;  
+##  9 2019-03-10 NA    DANI… 210 BR… &lt;NA&gt;    WILM… NC    28409 United… &lt;NA&gt;  
+## 10 2019-06-27 NA    DENI… 2506 S… &lt;NA&gt;    GREE… NC    27403 United… &lt;NA&gt;  
+## # … with 126 more rows, and 10 more variables: profession &lt;chr&gt;,
+## #   employer &lt;chr&gt;, purpose &lt;chr&gt;, type &lt;chr&gt;, account &lt;chr&gt;,
+## #   payment_form &lt;chr&gt;, description &lt;chr&gt;, amount &lt;dbl&gt;, sum_to_date &lt;dbl&gt;,
+## #   NewEmp &lt;chr&gt;</code></pre>
+</div>
+<div id="split-donor-names" class="section level3">
+<h3>Split donor names</h3>
+<pre class="r"><code>coop_new&lt;- cooper_rcpts_2019A %&gt;%
+  filter(donor != &quot;Aggregated Individual Contribution&quot;) %&gt;%
+  mutate(LastName = str_split(donor, &quot; &quot;, simplify=FALSE))</code></pre>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
