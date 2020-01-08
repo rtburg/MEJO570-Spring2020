@@ -123,6 +123,7 @@ Further information about the student Honor Code is available at http://honor.un
 If you need individual assistance, it’s your responsibility to meet with the instructor. If you are serious about wanting to improve your performance in the course, the time to seek help is as soon as you are aware of the problem – whether the problem is difficulty with course material, a disability, or an illness.
 
 Before you meet with me to help you with code, you need the following so I can best help you:
+
 * A description of the problem ([using Stack Overflow's guide](https://stackoverflow.com/help/how-to-ask))
 * A description of what you've done to solve the problem yourself
   * What did you do to try to isolate the error?
@@ -132,6 +133,7 @@ Before you meet with me to help you with code, you need the following so I can b
 * An appointment to meet in office hours
 
 I will *always* help you. But I need to see that you're working just as hard as I am to find the solution. Also, I expect you to make mistakes. We all make mistakes. You will see me make these kinds of mistakes in class. But there are three kinds of mistakes that if I find during a troubleshooting session with you will cost you a point on your next homework assignment. They are:
+
 * Spelling errors
 * Capitalization errors
 * Missing (or too many) enclosure marks (like quote marks, parentheses, etc.)
