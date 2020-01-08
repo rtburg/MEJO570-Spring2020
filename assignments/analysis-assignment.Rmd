@@ -3,6 +3,7 @@ title: "Data Analysis Assignment"
 output:   
   html_document:
     theme: cosmo
+
 ---
 
 For the analysis, you just have to answer the questions I give you. Plus have a reporting question or hypothesis you will use for your story. Plus a visualization.
@@ -22,7 +23,7 @@ For the analysis, you just have to answer the questions I give you. Plus have a 
 
 
 ## Analysis questions
-Students doing the standard analysis must fill out the values in the attached **[analysis answer template](assignments/analysis-answer-template.xlsx)**. This will be worth 60 points.
+Students doing the standard analysis must fill out the values in the attached **[analysis answer template](analysis-answer-template.xlsx)**. This will be worth 60 points.
 
 (Students working on one of the bonus assignments will work with me to develop similar questions appropriate for their chosen difficulty level.)
 

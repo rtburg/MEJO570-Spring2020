@@ -13,7 +13,7 @@ It will be an original explanaotry story driven by questions you have while look
 
 |Component|Percentage of your course grade|Due date
 |----------|------------------------|--------------
-|Data analysis|20%|March 30
+|[Data analysis](analysis-assignment.html)|20%|March 30
 |Draft|15%|April 22
 |Final|5%| Date of final exam
 
@@ -45,11 +45,9 @@ Your final story will be one of several elements uploaded to Github. In the last
 ### Detailed Work Plan
 Starting in Week 7, we will begin working with campaign finance data. We will be working with a certain set of data in class, but you will be given another contest to analyze for your final project. You will eventually be paired with another student doing the other candidate in the race. 
 
-From Feb. 17 - March 25 we will learn the skills needed to complete the data analysis that is due March 30. 
+From Feb. 17 - March 25 we will learn the skills needed to complete the [data analysis that is due March 30](analysis-assignment.html). 
 
-From April 6 - 22 you will be focused on adding the how, why, so what to your story by doing additional analysis.
-
-From April 3 - April 22 you will work on incorporating your analysis into a draft of your final written story. 
+From April 3 - April 22 you will be focused on adding the how, why, so what to your analysis and synthesizing it all into a draft of your final written story. 
 
 From April 25  until the date of your final you will use my feedback on your draft to put the finishing touches on your final project. 
 

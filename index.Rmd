@@ -31,7 +31,7 @@ Office Phone: 919-537-3681
 Course Site: [https://rtburg.github.io/MEJO570-Spring2020/](https://rtburg.github.io/MEJO570-Spring2020/)
 
 ## PRE-REQUISITES
-Experience reporting news in a professional or classroom setting, including clear news judgment and ability to communicate with clarity and brevity.**
+Experience reporting news in a professional or classroom setting, including clear news judgment and ability to communicate with clarity and brevity.
 
 ## COURSE DESCRIPTION
 In this skills-based course students learn how to acquire, clean, analyze and present data in a journalistic setting. 
@@ -367,7 +367,7 @@ No single course could possibly give you all of these values and competencies; b
 * Continuous vs. categorical variables in visualization
 * Visually exploring campaign finance reports
 
-* Discuss Final Assignment: Analysis, Draft, Final
+* Discuss Final Assignment: [Analysis](assignments/analysis-assignment.html), Draft, Final
 * Choose your candidates for final project
 * Doing a clips search
 * Finding experts
@@ -475,7 +475,7 @@ Optional:
 ### Class 21: March 30
 **In Class:**
 
-* Data Analysis for Final Story due
+* DUE: [Data Analysis for Final Story](assignments/analysis-assignment.html)
 * Dealing with data in PDFs and HTML
 * CometDocs & Tabula
 * ImportHTML
