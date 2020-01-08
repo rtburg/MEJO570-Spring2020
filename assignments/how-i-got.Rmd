@@ -1,5 +1,6 @@
 ---
 title: "Extra Credit: How I Got the Story"
+output: 
   html_document:
     theme: cosmo
 ---
