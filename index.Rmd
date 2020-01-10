@@ -3,12 +3,12 @@ title: "Syllabus: JOMC570 Data Driven Journalism - Spring 2020"
 author: "Ryan Thornburg"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output: 
-  pdf_document:
-    toc: no
   html_document:
     theme: cosmo
     toc: yes
     toc_float: yes
+  pdf_document:
+    toc: no
 ---
 
 ```{r setup, include=FALSE}
@@ -230,7 +230,7 @@ No single course could possibly give you all of these values and competencies; b
 * How data can lie to you
 
 * Introduction to R and RStudio
-  * https://mjwebster.github.io/DataJ/R/Boston_files/SettingUpForRClasses.R
+  * [SettingUpForRClasses.R](SettingUpForRClasses.R)
 * Introduction to markdown and R notebooks
 * Installing R packages
 * Introduction to variables, operators, lists, functions
