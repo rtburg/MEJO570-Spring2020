@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 4. Upload the Excel file to Sakai. Name is “collisions-[your last name]”
 
 ## Part 2
-1. Go to https://dod.defense.gov/News/Releases/Customrelcat/12003/ and look at the five most recent Casualty Releases.
+1. Go to https://www.defense.gov/Newsroom/releases/Search/casualty/ and look at the five most recent Casualty Releases.
 2. Create a spreadsheet where each row is one person. Design the spreadsheet so that a web developer could use it to create the data visualizations on this page: https://apps.washingtonpost.com/national/fallen/
 3. In Row 1, create column names. In rows 2-6, fill in the information pulled from the five most recent news releases.
 4. Upload the Excel file to Sakai. Name it “casualties-[your last name]
