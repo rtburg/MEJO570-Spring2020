@@ -3,12 +3,12 @@ title: "Syllabus: JOMC570 Data Driven Journalism - Spring 2020"
 author: "Ryan Thornburg"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output: 
+  pdf_document:
+    toc: no
   html_document:
     theme: cosmo
     toc: yes
     toc_float: yes
-  pdf_document:
-    toc: no
 ---
 
 ```{r setup, include=FALSE}
@@ -57,7 +57,7 @@ In general, I need you to turn in your assignments on time so I can give you fee
 
 For homework assignments, even 1 second after deadline is -1 point. After 24 hours, the deduction becomes 2 points. The grade for a homework assignment that is 48-72 hours late will be reduced by 3 points. I will not accept homework assignments more than three days late unless we have made arrangements before deadline.
 
-For major assignments, student can miss deadlines on major assignments by a cumulative 48 hours without penalty. That means one assignment can be 48 hours late, or 4 assignments can each be 12 hours late, etc. Once the 48-hour grace period is expended, the student' will immediately begin losing 10% of the possible points for each fraction of a day the assignment is late's grade on late assignments will immediate drop a full letter grade each calendar day it is late (eg. An A assignment due at noon on Thursday becomes a B at 12:01 p.m., a C at noon on Friday, a D at noon on Saturday, and an automatic F after noon on Sunday.)
+For major assignments, students can miss deadlines on major assignments by a cumulative 48 hours without penalty. That means one assignment can be 48 hours late, or 4 assignments can each be 12 hours late, etc. Once the 48-hour grace period is expended, the student will immediately begin losing 10% of the possible points for each fraction of a day the assignment is late. Grades on late assignments will immediately drop a full letter grade each calendar day it is late (eg. An A assignment due at noon on Thursday becomes a B at 12:01 p.m., a C at noon on Friday, a D at noon on Saturday, and an automatic F after noon on Sunday.)
 
 
 ## COURSE MATERIALS
