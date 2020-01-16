@@ -16,7 +16,7 @@ For this assignment, you will [use MuckRock identify a data set](https://www.muc
 
 Your deliverable will be a diary of your weekly efforts to acquire that data and your presentation on the date of our class final. I'll have more details when we kick off the assignment the second week of class.
 
-Grading for this assignment has a "degree of difficulty" component, which means that you will be rewarded for your persistance and ambition. Your assignment will earn a _maximum of 100 points_, as follows:
+Grading for this assignment has a "degree of difficulty" component, which means that you will be rewarded for your persistence and ambition. Your assignment will earn a _maximum of 100 points_, as follows:
 
 * obtained the data (+60 points)
 * obtained written documentation needed to understand the data, such as a data dictionary and/or code book (+10 points)

@@ -3,12 +3,12 @@ title: "Syllabus: JOMC570 Data Driven Journalism - Spring 2020"
 author: "Ryan Thornburg"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output: 
-  pdf_document:
-    toc: no
   html_document:
     theme: cosmo
     toc: yes
     toc_float: yes
+  pdf_document:
+    toc: no
 ---
 
 ```{r setup, include=FALSE}
@@ -142,7 +142,7 @@ I will *always* help you. But I need to see that you're working just as hard as 
 Why so mean to take off a point for these kinds of errors? Because they are errors of care and attention, not understanding. And because they are easy to eliminate as possible sources of error.
 
 ## DIVERSITY
-The University’s policy on Prohibiting Harassment and Discrimination is outlined in the 2011-2012 Undergraduate Bulletin http://www.unc.edu/ugradbulletin/. UNC is committed to providing an inclusive and welcoming environment for all members of our community and does not discriminate in offering access to its educational programs and activities on the basis of age, gender, race, color, national origin, religion, creed, disability, veteran’s status, sexual orientation, gender identity, or gender expression.
+UNC is committed to providing an inclusive and welcoming environment for all members of our community and does not discriminate in offering access to its educational programs and activities on the basis of age, gender, race, color, national origin, religion, creed, disability, veteran’s status, sexual orientation, gender identity, or gender expression. The [full University policy](https://eoc.unc.edu/our-policies/ppdhrm/) is available from the office of Equal Opportunity and Compliance.
  
 ## ACCOMODATIONS
 If you require special accommodations to attend or participate in this course, please let the instructor know as soon as possible. If you need information about disabilities visit the Department of Disability Services website at http://disabilityservices.unc.edu/ 
@@ -192,7 +192,7 @@ No single course could possibly give you all of these values and competencies; b
 **Homework:**
 
 * Do: [Data state of mind assignment](assignments/HW2.html)
-* Read: Date Literacy, [Chapter 2](https://dx-doi-org.libproxy.lib.unc.edu/10.4135/9781483399966.n6)
+* Read: Data Literacy, [Chapter 2](https://dx-doi-org.libproxy.lib.unc.edu/10.4135/9781483399966.n6)
 * Read: Data Literacy, [Chapter 3](https://dx-doi-org.libproxy.lib.unc.edu/10.4135/9781483399966.n7)
 * Do: [Reading summaries 2](assignments/reading-summaries.html)
 
