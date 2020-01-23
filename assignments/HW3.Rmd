@@ -25,7 +25,7 @@ Please just write the numerical answers.
 
 5. What was the average team payroll in 2016?
 
-6. What did most teams pay their players in 2016?
+6. Complete this sentence: "Most teams' total salary in 2016 was more than $________ ."
 
 **Excel Tasks** 
 
