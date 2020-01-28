@@ -31,7 +31,7 @@ Please just write the numerical answers.
 
 1. Download the Excel spreadsheet file that Webster has linked from her tutorial. Open it and save it as a renamed file.
 
-2. Freeze both Column A so you can scroll around your spreadsheet without losing your headers.
+2. Freeze Column A so you can scroll around your spreadsheet without losing your headers.
 
 3. In cell B33, use the SUM function to calculate the total amount of payroll for all teams in 2002.
 
