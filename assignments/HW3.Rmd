@@ -31,13 +31,13 @@ Please just write the numerical answers.
 
 1. Download the Excel spreadsheet file that Webster has linked from her tutorial. Open it and save it as a renamed file.
 
-2. Freeze both Row 1 and Column A so you can scroll around your spreadsheet without losing your headers.
+2. Freeze both Column A so you can scroll around your spreadsheet without losing your headers.
 
-3. In cell B32, use the SUM function to calculate the total amount of payroll for all teams in 2002.
+3. In cell B33, use the SUM function to calculate the total amount of payroll for all teams in 2002.
 
-4. Now, drag that formula from B32 all the way to the right so you have the total payroll amounts for each year.
+4. Now, drag that formula from B33 all the way to the right so you have the total payroll amounts for each year.
 
-5. In cell A32 give your new row a meaningful name
+5. In cell A33 give your new row a meaningful name
 
 6. In cell J2, calculate the how much more (or less) the Arizona Diamondbacks paid its players in 2016 than it paid in 2011.
 
@@ -47,19 +47,19 @@ Please just write the numerical answers.
 
 9. In cell K2, calculate the percent increase in the payroll for the Arizona Diamondbacks between 2011 and 2016.
 
-10. Fill column K down so that you have calculations of the increase in payroll for each team (and for all teams in Row 32)
+10. Fill column K down so that you have calculations of the increase in payroll for each team (and for all teams in Row 33)
 
 11. In cell K1 give your row a meaningful name.
 
 12. In cell L2, calculate the Diamondbacks payroll divided by the total payroll for 2016.
 
-13. Fill column L down so that you can see the percent of total payroll of each team (and for all teams in Row 32)
+13. Fill column L down so that you can see the percent of total payroll of each team (and for all teams in Row 33)
 
 14. In cell L1 give your row a meaningful name.
 
-15. In the cells in row 33, calculate the average payroll for each year, and give the row a meaningful name.
+15. In the cells in row 34, calculate the average payroll for each year, and give the row a meaningful name.
 
-16. In the cells in row 34, calculate the median payroll for each year, and give the row a meaningful name
+16. In the cells in row 35, calculate the median payroll for each year, and give the row a meaningful name
 
 17. Copy the formulas from Column L and paste them into Column M.
 
