@@ -23,6 +23,7 @@ Feel free to use any browser you like. But just know that they all behave a litt
 * **Step 1:** [Download and install Firefox](https://opennews.org/who/history/)
 * **Step 2:** [Change your Firefox settings](https://support.mozilla.org/en-US/kb/where-find-and-manage-downloaded-files-firefox#w_change-where-downloads-are-saved) so that it prompts you for the location to save a file each time you download one. (We will be downloading a lot of files this semester, and we want to keep your laptop tidy.)
 
+
 * **Step 3:** Set the default behavior for what happens when you click on a .csv or a .zip file in Firefox
 
   * [Click on](https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2019_11_05/polling_place_20191105.csv) the N.C. State Board of Elections' list of polling places used in the 2019 municipal elections. Follow [these instructions](https://support.mozilla.org/en-US/kb/change-firefox-behavior-when-open-file#w_adding-download-actions) to make Firefox ask you where you want to save .csv files any time you click on one of them.
@@ -39,6 +40,8 @@ Feel free to use any browser you like. But just know that they all behave a litt
 
 * **Step 2:** 
 Create a new folder (also called a directory) inside your Documents folder. Call it "MEJO570".
+
+* **Step 3:** Also at some pointin the semester, you will likely want to see "hidden" files on your computer. Here are the instructors for changing your computer's settings to allow you to see these hidden files on [Windows](https://support.microsoft.com/en-us/help/4028316/windows-view-hidden-files-and-folders-in-windows-10) and [OSX](https://apple.stackexchange.com/questions/340542/show-hidden-files-on-mac-os-x-mojave-using-terminal) (Added 1/29/20)
 
 ### Downloading R and RStudio
 * **Step 1:** [Download and install R](http://archive.linux.duke.edu/cran/). R is a computer language used for data analysis. You can [read more about it](https://learn.r-journalism.com/en/introduction/what_is_r/what-is-r/).
