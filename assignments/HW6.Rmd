@@ -43,7 +43,7 @@ MLBpayrolls
 ```
 
 
-### 3. What teams saw their payrolls double between 2004 and 2016?
+### 3. What teams saw their payrolls at least double between 2004 and 2016?
 ```{r}
 
 ```
