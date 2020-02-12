@@ -306,7 +306,7 @@ No single course could possibly give you all of these values and competencies; b
 
 **Homework**
 
-* Do: [HW8: Excel Pivot Tables](assignments/HW8.html)
+* Do: [HW8: Excel Pivot Tables (On Sakai)](https://sakai.unc.edu/x/Yq4ruA)
 * Read: R for Data Science, ["Data Transformation with Dplyr (Section on group_by and summarize)"](https://r4ds.had.co.nz/transform.html#grouped-summaries-with-summarise) 
 * Read: R for Journalists,["Tidying and joining data" (just the spread and gather sections)](https://learn.r-journalism.com/en/wrangling/tidyr_joins/tidyr-joins/)
 * Read: R for Data Science, ["Tidy data" (just 12.1-12.3)](https://r4ds.had.co.nz/tidy-data.html#spreading-and-gathering)
