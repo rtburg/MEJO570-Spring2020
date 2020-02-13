@@ -13,6 +13,13 @@ knitr::opts_chunk$set(echo = TRUE)
 ##Instructions
 Use this template to load your candidate's campaign finance data as well as the voter registration and history data for the counties in which your candidate is running. Upload your edited .Rmd file to Sakai.
 
+###We have a new package to install and load: janitor
+```{r}
+#install.packages("janitor")
+library(janitor)
+```
+
+
 ###Load the tidyverse package(s)
 ```{r}
 #install.packages("tidyverse")
@@ -63,6 +70,7 @@ results2019 <- read_delim(unz(temp, "results_pct_20191105.txt"),
                           `Contest Group ID` = col_character(),
                           `Choice Party` = col_character()
                           )) %>%
+#clean_names is from the janitor package
   clean_names() %>%
 #This next line deals with an issue I was having with "embedded nulls". I did try setting the locale inside read_delim, but it did not fix them problem. This line seems to do the trick... 
 mutate(choice_party = parse_character(choice_party, locale = locale(encoding = "ISO-8859-2")))
@@ -95,7 +103,6 @@ unlink(temp)
 candidates2020 <- read_csv("https://s3.amazonaws.com/dl.ncsbe.gov/Elections/2020/Candidate%20Filing/Candidate_Listing_2020.csv", 
     col_types = cols(candidacy_dt = col_date(format = "%m/%d/%Y"), 
         election_dt = col_date(format = "%m/%d/%Y")))
-View(Candidate_Listing_2020)
 ```
 
 
@@ -139,7 +146,6 @@ download.file("https://sosnc.gov/imaging/Dime/20191219/a882197628a9427f936b98840
 lobbyists2020 <- read_delim("~/Downloads/Lobbyist Export", 
     "\t", escape_double = FALSE, col_types = cols(LobbyAddress2 = col_character(), 
         PrinTitle = col_character()), trim_ws = TRUE)
-View(Lobbyist_Export)
 
 unlink(temp)
 
