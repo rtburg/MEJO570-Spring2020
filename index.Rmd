@@ -312,25 +312,100 @@ No single course could possibly give you all of these values and competencies; b
 * Read: R for Data Science, ["Tidy data" (just 12.1-12.3)](https://r4ds.had.co.nz/tidy-data.html#spreading-and-gathering)
 
 
+
+## Week 7
 ### ~~Class. 10: Feb. 12~~ Class 11: Feb. 17
 **In Class:**
 
-* Doing pivot tables in R with group_by(), summarize() and spread()
+* Doing pivot tables in R with group_by(), summarize() and pivot_wider()
 * Work on start of [HW9](assignments/HW9.Rmd) in class
 
 **Homework:**
 
-* Do: [Analyzing UNC Salaries in R](assignments/HW9.Rmd)
-* Read: R for Data Science, ["Data import"](https://r4ds.had.co.nz/data-import.html)
-* Read: R for Journalists, [Chapter 2](https://learn.r-journalism.com/en/importing_exporting/) 
+* Do: [Finish HW9](assignments/HW9.Rmd)
 
 
-## Week 7
+
 ### ~~Class 11: Feb. 17~~ Class 12: Feb. 19
 
 **In Class:**
 
-* Review group_by(), summarize() and spread()
+* Review HW9: group_by(), summarize() and pivot_wider()
+* Do: [Use HW10 Template to load campaign finance data](assignments/HW10.Rmd)
+* Introduction to exploring data through visualization with ggplot
+
+**Homework:**
+
+* Read: R for Data Science, ["Data visualization"](https://r4ds.had.co.nz/data-visualisation.html) 
+* Do: R for Data Science, 3.2.4 Exercises 1,2,4,5
+* Do: R for Data Science, 3.3.1 Exercises 1,2,3,4
+* Do: R for Data Science, 3.5.1 Exercises 1-6
+* Do: R for Data Science, 3.6.1 Exercises 1-6
+* Do: R for Data Science, 3.9.1 Exercise 2
+
+(When complete, upload your Rmd file to HW11 on Sakai.)
+
+## Week 8
+### ~~Class 12: Feb. 19~~ Class 13: Feb. 24
+**In Class:**
+
+* Continuous vs. categorical variables in visualization
+* Visually exploring campaign finance reports
+
+**Homework**
+
+* Read: [Numbers in the Newsroom, Chapters 2 & 3 ](https://ares.lib.unc.edu/ares/ares.dll?SessionID=D161147732A&Action=10&Type=10&Value=109111293)
+* Explore: [data visualization options](https://www.data-to-viz.com/#explore) with "from Data to Viz"
+* Read: [Statistics for the Newsroom](https://mjwebster.github.io/DataJ/articles/StatisticsForTheNewsroom.pdf)
+* Do: [Reading summaries 5](assignments/reading-summaries.html)
+
+
+### ~~Class 13: Feb. 24~~ Class 14: Feb. 26
+**In Class:**
+
+* Working with strings in campaign finance data
+* (Firefox screenshots)
+
+**Homework**
+
+* Read: R for Journalists, ["Handling Strings"]( https://learn.r-journalism.com/en/wrangling/strings/strings/)
+* Do: [R for Journalists Exercises]: (http://code.r-journalism.com/chapter-3/#section-handling-strings)
+
+(When complete, take a screenshot and uplod to Sakai HW12)
+
+**For optional extra practice**
+
+* Read: R for Data Science, ["Strings"](https://r4ds.had.co.nz/strings.html)
+
+* Optional for more practice:
+  * Do: R for Data Science, 14.3.3.1 Exercises 1, 5
+  * Do: R for Data Science, 14.3.4.1 Exercises 1-4
+  * Do: R for Data Science, 14.3.5.1 Exercises 1-2
+  * Do: R for Data Science, 14.4.4.1 Exercises 1-2
+  * Do: R for Data Science, 14.4.3.1 Exercises 1-2
+  * Do: R for Data Science, 14.4.5.1 Exercises 1-3
+
+
+## Week 9
+### ~~Class 14: Feb. 26~~ Class 15: March 2
+**In Class:**
+
+* Working with dates in campaign finance data
+
+
+**Homework:**
+
+* Read: R for Journalists, ["Dealing with Dates"](https://learn.r-journalism.com/en/wrangling/dates/dates/)
+* Read: R for Data Science, ["Dates and times"](https://r4ds.had.co.nz/dates-and-times.html)
+* Do: ["Dealing with Dates" exercises](http://code.r-journalism.com/chapter-3/#section-dealing-with-dates) in R for Journalists" 
+
+(When complete, take a screenshot and uplod to Sakai HW13)
+
+### ~~Class 15: March 2~~ March 4
+**In Class:**
+
+* Discuss Final Assignment: [Analysis](assignments/analysis-assignment.html), Draft, Final
+* Assign candidates for final project
 
 * Importing data into R
 * Dealing with different filetypes
@@ -338,78 +413,17 @@ No single course could possibly give you all of these values and competencies; b
 * Renaming columns
 * Dealing with missing variables
 
+
 **Homework:**
 
 * Do: [Load your candidate's data](assignments/HW10.Rmd)
-* Read: R for Data Science, ["Data visualization"](https://r4ds.had.co.nz/data-visualisation.html) 
-
-
-### ~~Class 12: Feb. 19~~ Class 13: Feb. 24
-**In Class:**
-
-* Introduction to exploring data through visualization
-
-**Homework**
-
-* Read: [Numbers in the Newsroom, Chapter 2](https://ares.lib.unc.edu/ares/ares.dll?SessionID=D161147732A&Action=10&Type=10&Value=109111293)
-* Do: [Reading summaries 5](assignments/reading-summaries.html)
-
-* Do: R for Data Science, 3.2.4 Exercises 1,2,4,5
-* Do: R for Data Science, 3.3.1 Exercises 1,2,3,4
-* Do: R for Data Science, 3.5.1 Exercises 1-6
-* Do: R for Data Science, 3.6.1 Exercises 1-6
-* Do: R for Data Science, 3.9.1 Exercise 2
-
-## Week 8
-### ~~Class 13: Feb. 24~~ Class 14: Feb. 26
-**In Class:**
-
-* Continuous vs. categorical variables in visualization
-* Visually exploring campaign finance reports
-
-* Discuss Final Assignment: [Analysis](assignments/analysis-assignment.html), Draft, Final
-* Choose your candidates for final project
-* Doing a clips search
-* Finding experts
-
-**Homework**
-
-* Explore: [data visualization options](https://www.data-to-viz.com/#explore) with "from Data to Viz"
-* Read: [Statistics for the Newsroom](https://mjwebster.github.io/DataJ/articles/StatisticsForTheNewsroom.pdf)
-* Read: R for Data Science, ["Exploratory Data Analysis"](https://r4ds.had.co.nz/exploratory-data-analysis.html) (through "Covarition Two categorical variables")
-
-### ~~Class 14: Feb. 26~~ Class 15: March 2
-**In Class:**
-
-* Working with strings in campaign finance data
-
-**Homework:**
-
-* Read: R for Journalists, ["Handling Strings"]( https://learn.r-journalism.com/en/wrangling/strings/strings/)
-* Read: R for Data Science, ["Strings"](https://r4ds.had.co.nz/strings.html)
-* Do: "Handlings strings" exercises in R for Journalists" 
-Optional:
-* Do: R for Data Science, 14.3.3.1 Exercises 1, 5
-* Do: R for Data Science, 14.3.4.1 Exercises 1-4
-* Do: R for Data Science, 14.3.5.1 Exercises 1-2
-* Do: R for Data Science, 14.4.4.1 Exercises 1-2
-* Do: R for Data Science, 14.4.3.1 Exercises 1-2
-* Do: R for Data Science, 14.4.5.1 Exercises 1-3
-
-## Week 9
-### ~~Class 15: March 2~~ March 4
-**In Class:**
-
-* Working with dates in campaign finance data
-
-**Homework:**
-
-* Read: R for Journalists, ["Dealing with Dates"](https://learn.r-journalism.com/en/wrangling/dates/dates/)
-* Read: R for Data Science, ["Dates and times"](https://r4ds.had.co.nz/dates-and-times.html)
-* Do: "Dealing with Dates" exercises in R for Journalists" 
+* Read: R for Data Science, ["Data import"](https://r4ds.had.co.nz/data-import.html)
+* Read: R for Journalists, [Chapter 2](https://learn.r-journalism.com/en/importing_exporting/) 
 
 ### ~~Class 16: March 4~~
 **~~In Class:~~**
+
+
 
 * ~~More useful R tricks:~~
   * ~~ifelse()~~
@@ -421,8 +435,10 @@ Optional:
 
 **Homework:**
 
-* Read: R for Data Science, Chapter 9
 * Read: R for Journalists, [Tidying and joining data](https://learn.r-journalism.com/en/wrangling/tidyr_joins/tidyr-joins/)
+* Read: R for Data Science, ["Tidy Data"](https://r4ds.had.co.nz/tidy-data.html)
+* Read: R for Data Science, ["Exploratory Data Analysis"](https://r4ds.had.co.nz/exploratory-data-analysis.html) (through "Covarition Two categorical variables")
+
 
 
 
@@ -441,7 +457,7 @@ Optional:
 **Homework:**
 
 * (Re-)Read: R for Journalists, [Tidying and joining data](https://learn.r-journalism.com/en/wrangling/tidyr_joins/tidyr-joins/)
-* Read: R for Data Science, ["Relational Data with dplyr"]()
+* Read: R for Data Science, ["Relational Data"](https://r4ds.had.co.nz/relational-data.html)
 
 
 ### Class. 18: March 18
