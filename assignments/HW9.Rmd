@@ -25,10 +25,15 @@ If you have not already loaded the police incident data into R, run the followin
 
 ```{r}
 library(readxl)
-download.file("http://mjwebster.github.io/DataJ/spreadsheets/Police_Incidents_2015.xlsx", "../data/Police_Incidents_2015.xlsx")
-incidents <- read_excel("data/Police_Incidents_2015.xlsx", 
-    skip = 2)
-incidents
+url <- "http://mjwebster.github.io/DataJ/spreadsheets/Police_Incidents_2015.xlsx"
+destfile <- "Police_Incidents_2015.xlsx"
+curl::curl_download(url, destfile)
+incidents <- read_excel(destfile, 
+    col_types = c("text", "text", "text", 
+        "text", "date", "date", "text", "text", 
+        "text", "text", "numeric", "numeric", 
+        "text"), skip = 2)
+View(incidents)
 ```
 
 
@@ -70,20 +75,23 @@ incidents %>%
 
 But that doesn't make it very easy to compare month to month and neighborhood at the same time. It's much better to have the cross-tab format that we easily get in an Excel pivot table.
 
-To make that same format we have to introduce a new function called `spread()`.
+To make that same format we have to introduce a new function called `pivot_wider()`. (You may see some older references to spread(), but that started to lose favor within the last year.)
 
 ```{r}
 incidents %>%
-  group_by(      ) %>%
-  summarize(     ) %>%
-  spread(key="month(ReportedDate)", value="crimes")
+  group_by(  ) %>%
+  summarize(   ) %>%
+  pivot_wider(names_from="month(ReportedDate)", values_from="crimes")
 ```
 
 **For the next several questions, we need to load another sheet from the MLBpayrolls.xls file.**
 ```{r}
-#download.file("https://mjwebster.github.io/DataJ/spreadsheets/MLBpayrolls.xls", "MLBPayrolls.xls")
-MLBplayers <- read_excel("../data/MLBpayrolls.xls", sheet = "Twins-Brewers")
-MLBplayers
+library(readxl)
+url <- "https://mjwebster.github.io/DataJ/spreadsheets/MLBpayrolls.xls"
+destfile <- "MLBplayers.xls"
+curl::curl_download(url, destfile)
+MLBplayers <- read_excel(destfile, sheet="Twins-Brewers")
+View(MLBplayers) 
 ```
 
 
@@ -104,9 +112,9 @@ MLBplayers %>%
 ### 6. Show the average salary that each team pays for all players at each position
 ```{r}
 MLBplayers %>%
-           %>% #group here
+  %>% #group here
   %>% #summarize here
-  #spread here
+  #pivot_wider here
 ```
 
 ###7. Make it pretty with the scales package and transmute. (But the downside is that you turn a perfectly good numeric data type into a useless character data type.)
@@ -116,7 +124,8 @@ MLBplayers %>%
            %>% #group here
   %>% #summarize here
   %>% #spread here
-  transmute(Brewers=dollar(Brewers),Twins=dollar(Twins))
+  transmute(Brewers=dollar(Brewers),Twins=dollar(Twins)) #transmute replaces columns rather than adds.
+#... and the dollars() function comes from the scales package.
 ```
 
 ###8. How much more (or less) do the Twins pay players at each position?
