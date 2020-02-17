@@ -48,19 +48,20 @@ incidents %>%
 ### 2. How many of the crimes in each neighborhood were "THEFT"?
 ```{r}
 incidents %>%
-  filter(     ) %>%
-  group_by(     ) %>%
-  summarize(     )
+
+  group_by(Offense) %>%
+  summarize(  theft_freq=n()   ) %>%
+  arrange(desc(theft_freq))
 ```
 
 
-### 3. Of all the crimes that happened in Shingle Creek from June to August, what percent were in August?
+### 3. How many crimes happened in Shingle Creek neighborhood in August?
 ```{r}
 # To do this, we have to load a package called "lubridate". We will discuss this much more later.
 library(lubridate)
 incidents %>%
-  filter(month(ReportedDate) == 8) %>%
-  group_by(     ) %>%
+  filter(month(ReportedDate) == 8, ) %>%
+  group_by( ) %>%
   summarize(     )
 ```
 
@@ -69,8 +70,8 @@ First, you have to group by two columns. First put the rows into Neighborhood bu
 
 ```{r}
 incidents %>%
-  group_by(     ) %>%
-  summarize(     )
+  group_by(   ,  ) %>%
+  summarize( )
 ```
 
 But that doesn't make it very easy to compare month to month and neighborhood at the same time. It's much better to have the cross-tab format that we easily get in an Excel pivot table.
@@ -79,9 +80,9 @@ To make that same format we have to introduce a new function called `pivot_wider
 
 ```{r}
 incidents %>%
-  group_by(  ) %>%
-  summarize(   ) %>%
-  pivot_wider(names_from="month(ReportedDate)", values_from="crimes")
+  group_by(     ,     ) %>%
+  summarize( ) %>%
+  pivot_wider(names_from="month(ReportedDate)", values_from="crimes") 
 ```
 
 **For the next several questions, we need to load another sheet from the MLBpayrolls.xls file.**
@@ -98,8 +99,8 @@ View(MLBplayers)
 ### 4. Display the total salary made by all players at each position.
 ```{r}
 MLBplayers %>%
-           %>% #group here
-#summarize here
+       %>% #group here
+           #summarize here
 ```
 
 ### 5. Use the code from Question 4 and add a column that shows the number of players at each position.
@@ -170,27 +171,27 @@ MLBplayers %>%
 ###10. Load the UNC Salary Data
 ```{r}
 
-#a very useful package we need here to clean column names, but which we will use much later.
+#We need to install janitor, a very useful package we need here to clean column names, but which we will use much later.
 #https://www.rdocumentation.org/packages/janitor/versions/1.2.0
 #install.packages("janitor")
 library(janitor)
 
-#Source URL: https://www.newsobserver.com/news/databases/public-salaries/article11863496.html?appSession=1403UK9UD78GOBC8IYH2RA16T4R98H6M0ERC7953FHQ895710Y670SYY3FQ9671YBURD70R8COF824IR86U6Q1X68ZNJDX3VAE3J47S5Z6P71O4Y5OF4ITN748WE5638
-#Source of CSV: https://b2.caspio.com/dp/9607300057a2f1855d704861804a?appSession=9ZZKQJVM13K77X3KL31S71NGL5X4X4TKYO8O65G4NM81MQUF4I1W0P550SFV270E7A7H99N03MULSI888P040L45904F7CUQQX745Z629W53OICVG952EB5Z161KI202&RecordID=&PageID=2&PrevPageID=1&cpipage=&download=1&downloadFormat=csv
+#Original source of the data: https://www.newsobserver.com/news/databases/public-salaries/article11863496.html?appSession=1403UK9UD78GOBC8IYH2RA16T4R98H6M0ERC7953FHQ895710Y670SYY3FQ9671YBURD70R8COF824IR86U6Q1X68ZNJDX3VAE3J47S5Z6P71O4Y5OF4ITN748WE5638
+#Source of CSV I saved to Sakai on Feb 17, 2020 at 11 a.m.: https://sakai.unc.edu/access/content/group/180aeff4-e971-45c7-a2a6-9f5f9d9c3785/UNC_System_Salaries%20Search%20and%20Report%202.csv
 
 
-temp <- tempfile()
-download.file("https://b2.caspio.com/dp/9607300057a2f1855d704861804a?appSession=9ZZKQJVM13K77X3KL31S71NGL5X4X4TKYO8O65G4NM81MQUF4I1W0P550SFV270E7A7H99N03MULSI888P040L45904F7CUQQX745Z629W53OICVG952EB5Z161KI202&RecordID=&PageID=2&PrevPageID=1&cpipage=&download=1&downloadFormat=csv",temp)
+library(readr)
+UNCsalaries <- read_csv("https://sakai.unc.edu/access/content/group/180aeff4-e971-45c7-a2a6-9f5f9d9c3785/UNC_System_Salaries%20Search%20and%20Report%202.csv", 
+    col_types = cols(`Total salary` = col_number()))
 
-UNCsalaries<-read_csv("~/Downloads/UNC_System_Salaries Search and Report.csv", col_types = cols(`Total salary` = col_number())) %>%
-#here is that janitor function
-clean_names()
-
-unlink(temp)
+#here is that janitor function that we will use to make pretty column names
+UNCsalaries <- clean_names(UNCsalaries)
 
 #since we already have lubridate loaded
 #The mdy() function from lubridate "magically" guesses the date format from character text
 UNCsalaries$hire_date <- mdy(UNCsalaries$hire_date)
+
+View(UNCsalaries)
 ```
 
 ###11. What is the most common month for UNC to hire employees? (Your result should have two columns -- one named "month" and one named "employees".)
