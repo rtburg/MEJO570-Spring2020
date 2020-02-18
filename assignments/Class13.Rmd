@@ -1,8 +1,6 @@
 ---
 title: "Class 13: Visualizing Campaign Finance data"
-author: "FIRSTNAME LASTNAME"
-date: "`r format(Sys.time(), '%B %d, %Y')`"
-time: "`r format(Sys.time(), '%H:%M')`"
+
 output: html_document
 ---
 ```{r setup, include=FALSE}
@@ -10,43 +8,45 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-##Instructions
+## Instructions
 Today in class we will begin exploring the campaign finance reports of Gov. Roy Cooper. For homework  —- in preparation for your final report -- you will do the same analysis for your candidate.
 
 
-###Load the tidyverse package(s)
+### Load the tidyverse package(s)
 ```{r}
 #install.packages("tidyverse")
 library(tidyverse)
+library(lubridate)
+library(scales)
 ```
 
 
-###Load the data 
+### Load the data 
 ```{r}
 url <- "https://cf.ncsbe.gov/CFOrgLkup/ExportDetailResults/?ReportID=168216&Type=REC&Title=Cooper%20for%20North%20Carolina%20-%202019%20Mid%20Year%20Semi-Annual"
 
 #read_csv() does not do a great job here guessing the correct col_types, so we have to define them explicitly.
 
-#cooper_rcpts_2019A <- read_csv(url, 
-#    col_types = cols(
-#      `Account Abbr` = col_character(), 
-#        City = col_character(), 
-#      `Country Name` = col_character(), 
-#        Date = col_date(format = "%m/%d/%Y"), 
-#        Description = col_character(), 
-#      `Employers Name` = col_character(), 
-#        `Full Zip` = col_character(), 
-#      `Outside US Postal Code` = col_character(), 
-#        Profession = col_character(), 
-#      Purpose = col_character(), 
-#        State = col_character(), 
-#      `Street 1` = col_character(), 
-#        `Street 2` = col_character()),
-#    skip = 1)
+cooper_rcpts_2019A <- read_csv(url, 
+    col_types = cols(
+      `Account Abbr` = col_character(), 
+        City = col_character(), 
+      `Country Name` = col_character(), 
+        Date = col_date(format = "%m/%d/%Y"), 
+        Description = col_character(), 
+      `Employers Name` = col_character(), 
+        `Full Zip` = col_character(), 
+      `Outside US Postal Code` = col_character(), 
+        Profession = col_character(), 
+      Purpose = col_character(), 
+        State = col_character(), 
+      `Street 1` = col_character(), 
+        `Street 2` = col_character()),
+    skip = 1)
 
 #Finally, we should rename the columns to remove spaces and generally promote brevity.
 
-#names(cooper_rcpts_2019A) <- c("date","prior","donor","street1","street2","city","state","zip","country","postal","profession","employer","purpose","type","account","payment_form","description","amount","sum_to_date")
+names(cooper_rcpts_2019A) <- c("date","prior","donor","street1","street2","city","state","zip","country","postal","profession","employer","purpose","type","account","payment_form","description","amount","sum_to_date")
 ```
 
 #One Numeric Variable
