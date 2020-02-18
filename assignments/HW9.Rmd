@@ -48,10 +48,8 @@ incidents %>%
 ### 2. How many of the crimes in each neighborhood were "THEFT"?
 ```{r}
 incidents %>%
-
-  group_by(Offense) %>%
-  summarize(  theft_freq=n()   ) %>%
-  arrange(desc(theft_freq))
+  group_by( ) %>%
+  summarize(     )
 ```
 
 
@@ -124,7 +122,7 @@ library(scales)
 MLBplayers %>%
            %>% #group here
   %>% #summarize here
-  %>% #spread here
+  %>% #pivot_wider here
   transmute(Brewers=dollar(Brewers),Twins=dollar(Twins)) #transmute replaces columns rather than adds.
 #... and the dollars() function comes from the scales package.
 ```
