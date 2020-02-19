@@ -132,7 +132,7 @@ MLBplayers %>%
 MLBplayers %>%
            %>% #group here
     %>%#summarize here
-    %>%#spread here
+    %>%#pivot_wider here
     %>%#mutate here
 ```
 
@@ -142,7 +142,7 @@ MLBplayers %>%
 MLBplayers %>%
   group_by(           ) %>%
   summarize(          ) %>%
-  spread(             ) %>%
+  pivot_wider(             ) %>%
   ungroup %>%
   mutate(              )
 
@@ -151,12 +151,12 @@ MLBplayers %>%
 #MLBplayers %>%
 #  group_by(POSITION, TEAM) %>%
 #  summarize(TotalSalary=sum(SALARY)) %>%
-#  spread(key=TEAM, value=TotalSalary) -> grouped_df
+#  pivot_wider(names_from=TEAM, values_from=TotalSalary) -> grouped_df
 
 #MLBplayers %>%
 #  group_by(POSITION, TEAM) %>%
 #  summarize(TotalSalary=sum(SALARY)) %>%
-#  spread(key=TEAM, value=TotalSalary) %>%
+#  pivot_wider(names_from=TEAM, values_from=TotalSalary) %>%
 #  ungroup() -> ungrouped_df
 
 #str(ungrouped_df)
