@@ -331,7 +331,7 @@ No single course could possibly give you all of these values and competencies; b
 **In Class:**
 
 * Review HW9: group_by(), summarize() and pivot_wider()
-* Do: [Use HW10 Template to load campaign finance data](assignments/HW10.Rmd)
+* ~~Do: [Use HW10 Template to load campaign finance data](assignments/HW10.Rmd)~~
 * [Introduction to exploring data through visualization with ggplot](assignments/Class13.html)
 
 **Homework:**
