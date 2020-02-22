@@ -176,7 +176,7 @@ cooper_rcpts_2019A %>%
 ```
 
 
-## Two numberic values
+## Two numeric values
 We don't really have this here. An example of this would be voter registration by precinct. So you would have the number of voters, etc. 
 
 
