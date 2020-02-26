@@ -26,14 +26,6 @@ library(janitor)
 library(tidyverse)
 ```
 
-```{r}
-ncvoter100 <- read_delim("~/Downloads/ncvoter100.txt", 
-    "\t", escape_double = FALSE, trim_ws = TRUE, 
-    col_names = FALSE,
-    na = c("", " "), 
-    skip = 1
-    )
-```
 
 
 
@@ -139,15 +131,18 @@ names(cooper_rcpts_2019A) <- c("date","prior","donor","street1","street2","city"
 
 #Lobbyists. (Tab delimited). 
 ```{r}
-temp <- tempfile()
+#temp <- tempfile()
 
-download.file("https://sosnc.gov/imaging/Dime/20191219/a882197628a9427f936b988405748d00.zip",temp)
+#lobbyists URL is dynamic, so we will not use.
+#download.file("https://sosnc.gov/imaging/Dime/20191219/a882197628a9427f936b988405748d00.zip",temp)
 
-lobbyists2020 <- read_delim("~/Downloads/Lobbyist Export", 
-    "\t", escape_double = FALSE, col_types = cols(LobbyAddress2 = col_character(), 
-        PrinTitle = col_character()), trim_ws = TRUE)
 
-unlink(temp)
+
+#lobbyists2020 <- read_delim("read_delim(unz(temp,", 
+#    "\t", escape_double = FALSE, col_types = #cols(LobbyAddress2 = col_character(), 
+#        PrinTitle = col_character()), trim_ws = TRUE)
+
+#unlink(temp)
 
 #You will see an error message that should concern you. It says it was getting more data than expected. But if you poke around in the file a bit with a text editor, you will see that there is an etra "tab" and the end of all the data lines... but not in the first row, which gives us our column headers. We see in the global environment that this dataframe has the 23 columns we would expect, so for now we can ignore this error. But it should lurk in the back of our head as the first place to look if we start seeing errors in our analysis.
 
