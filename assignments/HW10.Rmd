@@ -36,15 +36,26 @@ temp <- tempfile()
 
 download.file("https://s3.amazonaws.com/dl.ncsbe.gov/data/ncvoter100.zip",temp)
 
-voters_yancey <- read_delim(unz(temp, "ncvoter100.txt"),"\t", escape_double = FALSE, trim_ws = TRUE, locale = locale(encoding = "UTF8"),na = c("", " "), col_types = cols(.default = "c", 
+voters_yancey <- read_delim(unz(temp, "ncvoter100.txt"),
+                            "\t", 
+                            escape_double = FALSE, 
+                            trim_ws = TRUE, 
+                            #locale = locale(encoding = "UTF8"),
+                            na = c("", " "), 
+                            col_types = cols(.default = "c", 
                             birth_age = "i",
                             birth_year = "i")
 )
 
 
-
-
 unlink(temp)
+
+
+
+
+
+
+
 ```
 
 ###2019 Municipal Election Results
