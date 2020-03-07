@@ -456,7 +456,6 @@ No single course could possibly give you all of these values and competencies; b
 
 **Homework:**
 
-* (Re-)Read: R for Journalists, [Tidying and joining data](https://learn.r-journalism.com/en/wrangling/tidyr_joins/tidyr-joins/)
 * Read: R for Data Science, ["Relational Data"](https://r4ds.had.co.nz/relational-data.html)
 
 
@@ -474,7 +473,7 @@ No single course could possibly give you all of these values and competencies; b
 ### Class 19: March 23
 **In Class:**
 
-* Open Refine Day 1
+* Open Refine Day 1 (using [this data](COOPER FOR NORTH CAROLINA - 2019 MID YEAR SEMI-ANNUAL.csv))
 
 ### Class 20: March 25
 **In Class:**
@@ -521,16 +520,22 @@ No single course could possibly give you all of these values and competencies; b
 
 ## Week 14
 ### Class 25: April 13
+
+**In Class:**
+* [GGplot lesson from David H. Montgomery of Minnesota Public Radio](https://github.com/dhmontgomery/nicar20/tree/master/ggplot-graphics)
+
 **Homework:**
 
-* Read: [Numbers in the Newsroom, Chapter 3](https://ares.lib.unc.edu/ares/ares.dll?SessionID=D161147732A&Action=10&Type=10&Value=109111293)
-    * Do: [Reading summaries 7](assignments/reading-summaries.html)
-* Read: R for Journalists, [Chapter 4](https://learn.r-journalism.com/en/visualizing/)
-* Read: R for Data Science, ["Graphics for communication with ggplot"]()
+* Make a ggplot graphic with your candidate that you will share in the next class.
 
-**Extra Credit Reading:**
+**Reference and recipes for doing publication quality graphics with ggplot:**
 
-* https://ggplot2-book.org/
+* [BBC Visual and Data Journalism cookbook for R graphics](https://bbc.github.io/rcookbook/
+https://ggplot2-book.org/)
+* [Urban Institute R Graphics Guide](https://urbaninstitute.github.io/r-at-urban/graphics-guide.html)
+* [The R Graph Gallery](https://www.r-graph-gallery.com/index.html)
+* [Receipes for 50 ggplot visualiztions](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html)
+* [GGplot examples from Wall Street Journal's Maureen Linke](https://github.com/maureenlinke/nicar2020-R-data-analysis-plotting)
 * https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf
 * http://www.cookbook-r.com/Graphs/
 
