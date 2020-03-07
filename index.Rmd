@@ -473,11 +473,9 @@ No single course could possibly give you all of these values and competencies; b
 ### Class 19: March 23
 **In Class:**
 
-<<<<<<< HEAD
+
 * Open Refine Day 1 (using [this data](assignments/cooper2019b.csv))
-=======
-* Open Refine Day 1 (using [this data](cooper2019b.csv))
->>>>>>> 90c686da31bc081dfe2a9c5b203ca878c9b4adb9
+
 
 ### Class 20: March 25
 **In Class:**
