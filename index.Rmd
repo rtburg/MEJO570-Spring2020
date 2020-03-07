@@ -473,7 +473,7 @@ No single course could possibly give you all of these values and competencies; b
 ### Class 19: March 23
 **In Class:**
 
-* Open Refine Day 1 (using [this data](COOPER FOR NORTH CAROLINA - 2019 MID YEAR SEMI-ANNUAL.csv))
+* Open Refine Day 1 (using [this data](cooper2019b.csv))
 
 ### Class 20: March 25
 **In Class:**
