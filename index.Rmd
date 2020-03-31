@@ -441,14 +441,14 @@ No single course could possibly give you all of these values and competencies; b
 
 
 
+# Dates and deadlines below reflect changes made due to COVID-19
 
-
-## March 9 - 13: Spring Break
+## March 9 - 22: Spring Break
 
 
 
 ## Week 10
-### Class 17: March 16
+### Class 17: March 23
 **In Class**
 
 * Due: ["How I got the story?" extra credit assignment](assignments/how-i-got.html)
@@ -459,28 +459,22 @@ No single course could possibly give you all of these values and competencies; b
 * Read: R for Data Science, ["Relational Data"](https://r4ds.had.co.nz/relational-data.html)
 
 
-### Class. 18: March 18
+### Class. 18: March 25
 **In class:**
 
 * More joins.
 
 **Homework:**
 
-* Do: Join campaign finance to census data
+* Do: Join campaign finance to census data. This is for your final project.
 
 
 ## Week 11
-### Class 19: March 23
+### Class 19: March 30
 **In Class:**
 
 
 * Open Refine Day 1 (using [this data](assignments/cooper2019b.csv))
-
-
-### Class 20: March 25
-**In Class:**
-
-* Open Refine Day 2
 
 **Homework:**
 
@@ -488,39 +482,38 @@ No single course could possibly give you all of these values and competencies; b
 * Read: [Numbers in the Newsroom, Chapter 6](https://ares.lib.unc.edu/ares/ares.dll?SessionID=D161147732A&Action=10&Type=10&Value=109111293)
 * Do: [Reading summaries 6](assignments/reading-summaries.html)
 
+
+### Class 20: April 1
+**In Class:**
+
+* Open Refine Day 2
+
+
 ## Week 12
-### Class 21: March 30
+### Class 21: April 6
 **In Class:**
 
 * DUE: [Data Analysis for Final Story](assignments/analysis-assignment.html)
-* Dealing with data in PDFs and HTML
-* CometDocs & Tabula
-* ImportHTML
-
-
-### Class 22: April 1
-**In Class:**
-
-* ImportXML
-
-**Homework:**
-
-* Do: HW 14: Scrape IRE jobs board using ImportXML (instructions on Sakai)
-
-
-## Week 13
-### Class 23: April 6
-**In Class:**
+* ~~Dealing with data in PDFs and HTML~~
+* ~~CometDocs & Tabula~~
+* ~~ImportHTML~~
 
 * Intro to Rvest
 
-
-### Class 24: April 8
+### Class 22: April 8
 **In Class:**
+
+* ~~ImportXML~~
 
 * Rvest 2
 
-## Week 14
+**Homework:**
+
+* ~~Do: HW 14: Scrape IRE jobs board using ImportXML (instructions on Sakai)~~
+
+* Do: HW 14: Scrape IRE jobs board using Rvest
+
+## Week 13
 ### Class 25: April 13
 
 **In Class:**
