@@ -15,7 +15,7 @@ It will be an original explanatory story driven by questions you have while look
 |----------|------------------------|--------------
 |[Data analysis](analysis-assignment.html)|20%|March 30
 |Draft|15%|April 22
-|Final|5%| Date of final exam
+|Final|15%| Date of final exam
 
 
 The final story will be about 2,000 written words and it will have have these sections:
@@ -33,12 +33,15 @@ In this and other sections, you will use human sources to help put the data into
 ### Final Deliverables
 Your final story will be one of several elements uploaded to Github. In the last week of class you will learn how to publish your work on Github. Your final Github "repository" will include:
 
-* Written analysis uploaded as a PDF or HTML file
-* A Readme file explaining your work
+* A Word document with your written story.
 * An .Rmd file with your R code written in such a way that anyone else could just hit run and replicate your analysis.
-* An HTML version of the .Rmd file
-* Any OpenRefine scripts you used for your final analysis
 * Any .csv files of data that you manipulated before loading into R.
+~~* Written analysis uploaded as a PDF or HTML file~~
+~~* A Readme file explaining your work~~
+~~* An HTML version of the .Rmd file~~
+~~* Any OpenRefine scripts you used for your final analysis~~
+
+
 
 
 
@@ -65,17 +68,18 @@ You may also have points deducated, as follows:
 * Spelling and grammar errors, each -1 point
 * Each fact error, -5 points.
 
-* Missing or incomplete Readme file (-1 to -4 points)
-* Missing or incomplete .Rmd file  (-1 to -4 points)
-* Missing HTML version of the .Rmd file (-1)
-* Missing OpenRefine scripts you used for your final analysis, if applicable (-1)
-* Missing .csv files of data that you manipulated before loading into R, if applicable (-1)
+* ~~Missing or incomplete Readme file (-1 to -4 points)~~
+* ~~Missing or incomplete .Rmd file  (-1 to -4 points)~~
+* ~~Missing HTML version of the .Rmd file (-1)~~
+* ~~Missing OpenRefine scripts you used for your final analysis, if applicable (-1)~~
+* ~~Missing .csv files of data that you manipulated before loading into R, if applicable (-1)~~
 
 And, you can earn some extra credit points:
 
 * Include a publication quality data visualization created in R: +1-4 points
+* A Github respository that includes a ReadMe file, your R scripts, your data and your written story. +1-4 points
 * Use data that had to be requested or scraped: +1-4 points
-*Extra credit: Uses data that was not give to you in class, and joined to make a newsworthy comparison +2-4 points
+* Uses data that was not give to you in class, and joined to make a newsworthy comparison +2-4 points
 
 #### Grade breaks
 A: 17-20 points
